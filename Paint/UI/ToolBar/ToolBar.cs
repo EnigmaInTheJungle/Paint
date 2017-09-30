@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Paint.Command;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,13 +13,18 @@ namespace Paint.UI.ToolBar
     {
         FileStrip fileStrip;
         CloudStrip cloudStrip;
-        public ToolBar()
+        
+        public ToolBar(XCommand command)
         {
             Dock = DockStyle.Top;
+            BackColor = Color.White;
 
-            Items.AddRange(fileStrip.GetFileStrip());
+            fileStrip = new FileStrip(command);
+            cloudStrip = new CloudStrip(command);
+
+            Items.AddRange(fileStrip.FileStripList);
             Items.Add(new ToolStripSeparator());
-            Items.AddRange(cloudStrip.GetCloudStrip());
+            Items.AddRange(cloudStrip.CloudStripList);
             Items.Add(new ToolStripSeparator());
         }
         

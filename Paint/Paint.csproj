@@ -61,6 +61,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="UI\DrawPanel\DrawPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -117,13 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="UI\InputDialog\TextInput.resx">
       <DependentUpon>TextInput.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,24 +142,52 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\Image Icon\CenterAling.PNG" />
-    <Content Include="Resources\Image Icon\Language.PNG" />
-    <Content Include="Resources\Image Icon\Load.PNG" />
-    <Content Include="Resources\Image Icon\LoadC.PNG" />
-    <Content Include="Resources\Image Icon\LSideAlign.PNG" />
-    <Content Include="Resources\Image Icon\R.PNG" />
-    <Content Include="Resources\Image Icon\RotateTextL.PNG" />
-    <Content Include="Resources\Image Icon\RotateTextR.PNG" />
-    <Content Include="Resources\Image Icon\RSideAlign.PNG" />
-    <Content Include="Resources\Image Icon\Save.PNG" />
-    <Content Include="Resources\Image Icon\SaveC.PNG" />
-    <Content Include="Resources\Image Icon\Settings.PNG" />
-    <Content Include="Resources\Image Icon\TextInput.PNG" />
-    <Content Include="Resources\Image Icon\TextPos1.PNG" />
-    <Content Include="Resources\Image Icon\TextPos2.PNG" />
+    <Folder Include="UI\DrawFigureType\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="UI\DrawFigureType\" />
+    <None Include="Resources\CenterAling.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Load.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LoadC.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LSideAlign.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\R.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RotateTextL.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RotateTextR.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RSideAlign.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveC.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TextInput.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TextPos1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TextPos2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Language.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

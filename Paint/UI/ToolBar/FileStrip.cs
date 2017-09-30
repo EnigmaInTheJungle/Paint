@@ -12,21 +12,15 @@ namespace Paint.UI.ToolBar
 {
     public class FileStrip : ToolStrip
     {
-        ToolStripItem[] fileStrip;
-        XCommand command;
+        public ToolStripItem[] FileStripList { get; }
 
-        public ToolStripItem[] GetFileStrip()
+        public FileStrip(XCommand command)
         {
-            string saveIcon = @"Resources\Image Icon\Save.PNG";
-            string openIcon = @"Resources\Image Icon\Load.PNG";
-
-            fileStrip = new ToolStripItem[]
+            FileStripList = new ToolStripItem[]
             {
-                new ToolStripButton("Save",new Bitmap(saveIcon),command.Save.Action),
-                new ToolStripButton("Open", new Bitmap(openIcon), command.Open.Action)
+                new ToolStripButton(null,Properties.Resources.Save,command.Save.Action),
+                new ToolStripButton(null, Properties.Resources.Load, command.Open.Action)
             };
-
-            return fileStrip;
         }
     }
 }

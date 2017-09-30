@@ -11,20 +11,15 @@ namespace Paint.UI.ToolBar
 {
     class CloudStrip : ToolStrip
     {
-        ToolStripItem[] cloudStrip;
-        XCommand command;
+        public ToolStripItem[] CloudStripList { get;  }
 
-        public ToolStripItem[] GetCloudStrip()
+        public CloudStrip(XCommand command)
         {
-            string saveCloudIcon = @"Resources\Image Icon\SaveC.PNG";
-            string openCloudIcon = @"Resources\Image Icon\LoadC.PNG";
-
-            cloudStrip = new ToolStripItem[]
+            CloudStripList = new ToolStripItem[]
             {
-                new ToolStripButton("Save",new Bitmap(saveCloudIcon),null),
-                new ToolStripButton("Open", new Bitmap(openCloudIcon), null)
+                new ToolStripButton(null,Properties.Resources.SaveC,command.SaveCloud.Action),
+                new ToolStripButton(null,Properties.Resources.LoadC, command.LoadCloud.Action)
             };
-            return cloudStrip;
         }
     }
 }

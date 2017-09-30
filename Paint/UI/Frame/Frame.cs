@@ -17,7 +17,9 @@ namespace Paint.UI.Frame
             XCommand command = new XCommand();
             
             Controls.Add(new Paint.UI.Tabs.Tabs(command));
+            Controls.Add(new Paint.UI.ToolBar.ToolBar(command));
             Controls.Add(new Paint.UI.MenuBar.MenuBar(command));
+            
         }
     }
 }
