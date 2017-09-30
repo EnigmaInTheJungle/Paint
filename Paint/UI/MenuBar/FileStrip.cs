@@ -22,8 +22,27 @@ namespace Paint.UI.Menu
         {
             Name = "File";
 
-            newStrip = new ToolStripMenuItem("Load", null, command.AddPage.Action);
+            newStrip = new ToolStripMenuItem("New", null, command.AddPage.Action);
+            openStrip = new ToolStripMenuItem("Open", null, command.Open.Action);
+            saveStrip = new ToolStripMenuItem("Save", null, command.Save.Action);
+            saveAsStrip = new ToolStripMenuItem("Save as..", null, command.Save.Action);
+            saveCloudStrip = new ToolStripMenuItem("Save in Cloud", null);
+            loadCloudStrip = new ToolStripMenuItem("Load from Cloud", null);
+            exitStrip = new ToolStripMenuItem("Exit", null);
 
+            DropDownItems.Add(newStrip);
+            DropDownItems.Add(openStrip);
+            DropDownItems.Add(new ToolStripSeparator());
+
+            DropDownItems.Add(saveStrip);
+            DropDownItems.Add(saveAsStrip);
+            DropDownItems.Add(new ToolStripSeparator());
+
+            DropDownItems.Add(saveCloudStrip);
+            DropDownItems.Add(loadCloudStrip);
+            DropDownItems.Add(new ToolStripSeparator());
+
+            DropDownItems.Add(exitStrip);
         }
 
     }

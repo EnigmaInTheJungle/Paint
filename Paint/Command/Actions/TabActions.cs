@@ -40,7 +40,7 @@ namespace Paint.Command.Actions
             {
                 this.cmd = cmd;
             }
-            public void Action()
+            public void Action(object sender, EventArgs e)
             {
                 cmd.Frame.MenuBar.RemovePageStrip(cmd.Frame.Tab.SelectedTab.Text);
                 cmd.Frame.Tab.RemovePage(cmd.Frame.Tab.SelectedTab);               

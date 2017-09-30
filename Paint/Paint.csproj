@@ -65,7 +65,19 @@
     <Compile Include="UI\MenuBar\FileStrip.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UI\MenuBar\HelpStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UI\MenuBar\MenuBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\MenuBar\SettingsStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\MenuBar\ViewStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\MenuBar\WindowStrip.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UI\StatusBar\StatusBar.cs">
