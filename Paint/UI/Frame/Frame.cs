@@ -13,7 +13,11 @@ namespace Paint.UI.Frame
         public Frame()
         {
             Dock = DockStyle.Fill;
-            Controls.Add(new Paint.UI.MenuBar.MenuBar(new XCommand()));
+
+            XCommand command = new XCommand();
+            
+            Controls.Add(new Paint.UI.Tabs.Tabs(command));
+            Controls.Add(new Paint.UI.MenuBar.MenuBar(command));
         }
     }
 }
