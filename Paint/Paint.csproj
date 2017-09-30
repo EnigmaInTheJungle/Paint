@@ -66,6 +66,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="UI\DrawFigureType\DrawFigureType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\DrawFigureType\DrawFigureType.Designer.cs">
+      <DependentUpon>DrawFigureType.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\DrawPanel\DrawPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -125,6 +131,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\DrawFigureType\DrawFigureType.resx">
+      <DependentUpon>DrawFigureType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\InputDialog\TextInput.resx">
       <DependentUpon>TextInput.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,9 +150,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UI\DrawFigureType\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\CenterAling.PNG" />
   </ItemGroup>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Paint.Command;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,8 +12,10 @@ namespace Paint.UI.StatusBar
     {
         DataStrip dataStrip;
 
-        public StatusBar()
+        public StatusBar(XCommand command)
         {
+            dataStrip = new DataStrip(command);
+
             Items.Add(dataStrip.GetMousePos());
             Items.Add(dataStrip.GetPageName());
         }

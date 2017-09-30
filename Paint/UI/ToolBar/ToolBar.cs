@@ -16,7 +16,6 @@ namespace Paint.UI.ToolBar
         
         public ToolBar(XCommand command)
         {
-            Dock = DockStyle.Top;
             BackColor = Color.White;
 
             fileStrip = new FileStrip(command);
