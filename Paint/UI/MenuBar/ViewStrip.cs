@@ -18,7 +18,7 @@ namespace Paint.UI.MenuBar
 
         public ViewStrip(XCommand command)
         {
-            Name = "View";
+            Text = "View";
 
             toolBoxStrip = new ToolStripMenuItem("ToolBox", null, command.RenamePage.Action);
             toolBarStrip = new ToolStripMenuItem("ToolBar", null, command.RemovePage.Action);

@@ -14,8 +14,8 @@ namespace Paint.UI.MenuBar
 
         public SettingsStrip(XCommand command)
         {
-            Name = "Settings";
-            langStrip = MenuBar.GetDropDownStrip("Skin", new List<string>() { "Light", "Dark", "Pink" });
+            Text = "Settings";
+            langStrip = MenuBar.GetDropDownStrip("Language", new List<string>() { "English", "Russian", "Ukrainian" });
 
             DropDownItems.Add(new ToolStripSeparator());
             DropDownItems.Add(langStrip);

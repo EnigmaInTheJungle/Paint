@@ -18,7 +18,7 @@ namespace Paint.UI.MenuBar
 
         public WindowStrip(XCommand command)
         {
-            Name = "Window";
+            Text = "Window";
 
             renameStrip = new ToolStripMenuItem("Rename", null, command.RenamePage.Action);
             closeStrip = new ToolStripMenuItem("Close", null, command.RemovePage.Action);

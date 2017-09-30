@@ -23,5 +23,15 @@ namespace Paint.UI.MenuBar
             Items.Add(new HelpStrip(command));
             //Localization = new ResourceManager("Paint.Localization.En", Assembly.GetExecutingAssembly());
         }
+
+        public static ToolStripMenuItem GetDropDownStrip(string ownerText, List<string> items, System.EventHandler onClick = null)
+        {
+            ToolStripMenuItem owner = new ToolStripMenuItem(ownerText, null);
+            foreach (string itemText in items)
+            {
+                owner.DropDownItems.Add(new ToolStripMenuItem(itemText, null, onClick));
+            }
+            return owner;
+        }
     }
 }

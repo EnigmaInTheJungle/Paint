@@ -19,7 +19,7 @@ namespace Paint.Command.Actions
             }
             public void Action(object sender, EventArgs e)
             {            
-                SOFactory.GetInstance(path).Save(cmd.Frame.Tab.ActivePage.DrawPanel.GetListOfFigures());
+                //SOFactory.GetInstance(path).Save(cmd.Frame.Tab.ActivePage.DrawPanel.GetListOfFigures());
             }
         }
         public class ActionOpen
@@ -31,8 +31,8 @@ namespace Paint.Command.Actions
             }
             public void Action(object sender, EventArgs e)
             {
-                cmd.Frame.Tab.LoadPage(SOFactory.GetInstance(path).Open());
-                cmd.Frame.MenuBar.AddPageStrip(cmd.Frame.Tab.SelectedTab.Text);
+                //cmd.Frame.Tab.LoadPage(SOFactory.GetInstance(path).Open());
+                //cmd.Frame.MenuBar.AddPageStrip(cmd.Frame.Tab.SelectedTab.Text);
             }
         }
 
@@ -45,7 +45,7 @@ namespace Paint.Command.Actions
             }
             public void Action(object sender, EventArgs e)
             {
-                cmd.Point = (e as MouseEventArgs).Location;
+                //cmd.Point = (e as MouseEventArgs).Location;
             }
         }
     }

@@ -15,8 +15,8 @@ namespace Paint.Command.Actions
             }
             public void Action(object sender, EventArgs e)
             {                
-                cmd.Frame.Tab.AddPage(name);
-                cmd.Frame.MenuBar.AddPageStrip(cmd.Frame.Tab.SelectedTab.Text);
+                //cmd.Frame.Tab.AddPage(name);
+                //cmd.Frame.MenuBar.AddPageStrip(cmd.Frame.Tab.SelectedTab.Text);
             }
         }
 
@@ -29,7 +29,7 @@ namespace Paint.Command.Actions
             }
             public void Action(object sender, EventArgs e)
             {
-                cmd.Frame.Tab.SelectedTab = cmd.Frame.Tab.TabPages[cmd.Frame.Tab.TabPages.IndexOfKey(name)];
+                //cmd.Frame.Tab.SelectedTab = cmd.Frame.Tab.TabPages[cmd.Frame.Tab.TabPages.IndexOfKey(name)];
             }
         }
 
@@ -42,8 +42,8 @@ namespace Paint.Command.Actions
             }
             public void Action(object sender, EventArgs e)
             {
-                cmd.Frame.MenuBar.RemovePageStrip(cmd.Frame.Tab.SelectedTab.Text);
-                cmd.Frame.Tab.RemovePage(cmd.Frame.Tab.SelectedTab);               
+                //cmd.Frame.MenuBar.RemovePageStrip(cmd.Frame.Tab.SelectedTab.Text);
+                //cmd.Frame.Tab.RemovePage(cmd.Frame.Tab.SelectedTab);               
             }
         }
 
@@ -56,9 +56,9 @@ namespace Paint.Command.Actions
             }
             public void Action(object sender, EventArgs e)
             {
-                cmd.Frame.MenuBar.RenamePageStrip(cmd.Frame.Tab.SelectedTab.Text, name);
-                cmd.Frame.Tab.SelectedTab.Text = name;
-                cmd.Frame.Tab.SelectedTab.Name = name;
+                //cmd.Frame.MenuBar.RenamePageStrip(cmd.Frame.Tab.SelectedTab.Text, name);
+                //cmd.Frame.Tab.SelectedTab.Text = name;
+                //cmd.Frame.Tab.SelectedTab.Name = name;
             }
         }
 
@@ -71,10 +71,10 @@ namespace Paint.Command.Actions
             }
             public void Action(object sender, EventArgs e)
             {
-                if (cmd.Frame.Tab.ActiveFigure != null && figureControl == null)
-                    cmd.Frame.Tab.ActiveFigure.BorderStyle = System.Windows.Forms.BorderStyle.None;
+                //if (cmd.Frame.Tab.ActiveFigure != null && figureControl == null)
+                //    cmd.Frame.Tab.ActiveFigure.BorderStyle = System.Windows.Forms.BorderStyle.None;
 
-                cmd.Frame.Tab.ActiveFigure = figureControl;
+                //cmd.Frame.Tab.ActiveFigure = figureControl;
             }
         }
     }

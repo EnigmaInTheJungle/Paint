@@ -15,7 +15,7 @@ namespace Paint.UI.MenuBar
 
         public HelpStrip(XCommand command)
         {
-            Name = "Help";
+            Text = "Help";
             aboutStrip = new ToolStripMenuItem("About..", null);
             helpStrip = new ToolStripMenuItem("Show help..", null);
 

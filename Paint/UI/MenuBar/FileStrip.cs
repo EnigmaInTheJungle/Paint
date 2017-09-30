@@ -20,7 +20,7 @@ namespace Paint.UI.Menu
 
         public FileStrip(XCommand command)
         {
-            Name = "File";
+            Text = "File";
 
             newStrip = new ToolStripMenuItem("New", null, command.AddPage.Action);
             openStrip = new ToolStripMenuItem("Open", null, command.Open.Action);
