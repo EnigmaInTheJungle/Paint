@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Paint.Command;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,21 +10,20 @@ namespace Paint.UI.Menu
 {
     class FileStrip : ToolStripMenuItem
     {
-        public FileStrip()
+        ToolStripMenuItem newStrip;
+        ToolStripMenuItem openStrip;
+        ToolStripMenuItem saveStrip;
+        ToolStripMenuItem saveAsStrip;
+        ToolStripMenuItem saveCloudStrip;
+        ToolStripMenuItem loadCloudStrip;
+        ToolStripMenuItem exitStrip;
+
+        public FileStrip(XCommand command)
         {
             Name = "File";
-                List<ToolStripMenuItem> fileItems = new List<ToolStripMenuItem>
-            {
-                new ToolStripMenuItem("Save as..", null, ComponentEvents.OnFiguresSaved),
-                new ToolStripMenuItem("Load", null, ComponentEvents.OnFiguresLoaded)
-            };
 
-                foreach (var item in fileItems)
-                {
-                    fileStrip.DropDownItems.Add(item);
-                }
-                return fileStrip;
-            }
+            newStrip = new ToolStripMenuItem("Load", null, command.AddPage.Action);
+
         }
 
     }

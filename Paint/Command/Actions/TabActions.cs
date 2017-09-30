@@ -1,5 +1,7 @@
 ﻿
 
+using System;
+
 namespace Paint.Command.Actions
 {
     public static class TabActions
@@ -11,7 +13,7 @@ namespace Paint.Command.Actions
             {
                 this.cmd = cmd;
             }
-            public void Action(string name = "Page")
+            public void Action(object sender, EventArgs e)
             {                
                 cmd.Frame.Tab.AddPage(name);
                 cmd.Frame.MenuBar.AddPageStrip(cmd.Frame.Tab.SelectedTab.Text);
@@ -25,7 +27,7 @@ namespace Paint.Command.Actions
             {
                 this.cmd = cmd;
             }
-            public void Action(string name)
+            public void Action(object sender, EventArgs e)
             {
                 cmd.Frame.Tab.SelectedTab = cmd.Frame.Tab.TabPages[cmd.Frame.Tab.TabPages.IndexOfKey(name)];
             }
@@ -52,7 +54,7 @@ namespace Paint.Command.Actions
             {
                 this.cmd = cmd;
             }
-            public void Action(string name)
+            public void Action(object sender, EventArgs e)
             {
                 cmd.Frame.MenuBar.RenamePageStrip(cmd.Frame.Tab.SelectedTab.Text, name);
                 cmd.Frame.Tab.SelectedTab.Text = name;
@@ -67,7 +69,7 @@ namespace Paint.Command.Actions
             {
                 this.cmd = cmd;
             }
-            public void Action(FigureControl figureControl)
+            public void Action(object sender, EventArgs e)
             {
                 if (cmd.Frame.Tab.ActiveFigure != null && figureControl == null)
                     cmd.Frame.Tab.ActiveFigure.BorderStyle = System.Windows.Forms.BorderStyle.None;

@@ -17,7 +17,7 @@ namespace Paint.Command.Actions
             {
                 this.cmd = cmd;
             }
-            public void Action(string path)
+            public void Action(object sender, EventArgs e)
             {            
                 SOFactory.GetInstance(path).Save(cmd.Frame.Tab.ActivePage.DrawPanel.GetListOfFigures());
             }
@@ -29,7 +29,7 @@ namespace Paint.Command.Actions
             {
                 this.cmd = cmd;
             }
-            public void Action(string path)
+            public void Action(object sender, EventArgs e)
             {
                 cmd.Frame.Tab.LoadPage(SOFactory.GetInstance(path).Open());
                 cmd.Frame.MenuBar.AddPageStrip(cmd.Frame.Tab.SelectedTab.Text);
