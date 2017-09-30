@@ -117,6 +117,22 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\Image Icon\CenterAling.PNG" />
+    <Content Include="Resources\Image Icon\Language.PNG" />
+    <Content Include="Resources\Image Icon\Load.PNG" />
+    <Content Include="Resources\Image Icon\LoadC.PNG" />
+    <Content Include="Resources\Image Icon\LSideAlign.PNG" />
+    <Content Include="Resources\Image Icon\R.PNG" />
+    <Content Include="Resources\Image Icon\RotateTextL.PNG" />
+    <Content Include="Resources\Image Icon\RotateTextR.PNG" />
+    <Content Include="Resources\Image Icon\RSideAlign.PNG" />
+    <Content Include="Resources\Image Icon\Save.PNG" />
+    <Content Include="Resources\Image Icon\SaveC.PNG" />
+    <Content Include="Resources\Image Icon\Settings.PNG" />
+    <Content Include="Resources\Image Icon\TextInput.PNG" />
+    <Content Include="Resources\Image Icon\TextPos1.PNG" />
+    <Content Include="Resources\Image Icon\TextPos2.PNG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
