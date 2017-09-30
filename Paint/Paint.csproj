@@ -53,10 +53,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UI\Menu\FileStrip.cs">
+    <Compile Include="UI\MenuBar\FileStrip.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UI\Menu\MenuBar.cs">
+    <Compile Include="UI\MenuBar\MenuBar.cs">
       <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
@@ -83,6 +83,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UI\StatusBar\" />
+    <Folder Include="UI\Tabs\" />
+    <Folder Include="UI\ToolBar\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
