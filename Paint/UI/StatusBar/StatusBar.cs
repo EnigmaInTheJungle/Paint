@@ -7,7 +7,14 @@ using System.Windows.Forms;
 
 namespace Paint.UI.StatusBar
 {
-    class StatusBar : StatusStrip
+    public class StatusBar : StatusStrip
     {
+        DataStrip dataStrip;
+
+        public StatusBar()
+        {
+            Items.Add(dataStrip.GetMousePos());
+            Items.Add(dataStrip.GetPageName());
+        }
     }
 }

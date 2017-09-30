@@ -7,7 +7,19 @@ using System.Windows.Forms;
 
 namespace Paint.UI.ToolBar
 {
-    class ToolBar : ToolStrip
+    public class ToolBar : ToolStrip
     {
+        FileStrip fileStrip;
+        CloudStrip cloudStrip;
+        public ToolBar()
+        {
+            Dock = DockStyle.Top;
+
+            Items.AddRange(fileStrip.GetFileStrip());
+            Items.Add(new ToolStripSeparator());
+            Items.AddRange(cloudStrip.GetCloudStrip());
+            Items.Add(new ToolStripSeparator());
+        }
+        
     }
 }
