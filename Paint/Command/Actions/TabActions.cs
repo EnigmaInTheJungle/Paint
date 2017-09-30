@@ -1,6 +1,8 @@
 ﻿
 
+using Paint.UI.TextInput;
 using System;
+using System.Windows.Forms;
 
 namespace Paint.Command.Actions
 {
@@ -47,6 +49,20 @@ namespace Paint.Command.Actions
             }
         }
 
+        public class ActionRemoveAllPages
+        {
+            XCommand cmd;
+            public ActionRemoveAllPages(XCommand cmd)
+            {
+                this.cmd = cmd;
+            }
+            public void Action(object sender, EventArgs e)
+            {
+                //cmd.Frame.MenuBar.RemovePageStrip(cmd.Frame.Tab.SelectedTab.Text);
+                //cmd.Frame.Tab.RemovePage(cmd.Frame.Tab.SelectedTab);               
+            }
+        }
+
         public class ActionRenamePage
         {
             XCommand cmd;
@@ -56,9 +72,16 @@ namespace Paint.Command.Actions
             }
             public void Action(object sender, EventArgs e)
             {
-                //cmd.Frame.MenuBar.RenamePageStrip(cmd.Frame.Tab.SelectedTab.Text, name);
-                //cmd.Frame.Tab.SelectedTab.Text = name;
-                //cmd.Frame.Tab.SelectedTab.Name = name;
+                TextInput inputForm = new TextInput();
+                string result = "";
+                if (inputForm.ShowDialog() == DialogResult.OK)
+                {
+                    result = inputForm.resultTxt.Text;
+                    //cmd.Frame.MenuBar.RenamePageStrip(cmd.Frame.Tab.SelectedTab.Text, result);
+                    //cmd.Frame.Tab.SelectedTab.Text = result;
+                    //cmd.Frame.Tab.SelectedTab.Name = result;
+                }
+                inputForm.Dispose();              
             }
         }
 

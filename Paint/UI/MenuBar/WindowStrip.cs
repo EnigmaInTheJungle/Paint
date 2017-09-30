@@ -22,7 +22,7 @@ namespace Paint.UI.MenuBar
 
             renameStrip = new ToolStripMenuItem("Rename", null, command.RenamePage.Action);
             closeStrip = new ToolStripMenuItem("Close", null, command.RemovePage.Action);
-            closeAllStrip = new ToolStripMenuItem("CloseAll", null);
+            closeAllStrip = new ToolStripMenuItem("CloseAll", null, command.RemoveAllPages.Action);
 
             DropDownItems.Add(renameStrip);
             DropDownItems.Add(new ToolStripSeparator());

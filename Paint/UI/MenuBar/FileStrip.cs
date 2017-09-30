@@ -24,11 +24,11 @@ namespace Paint.UI.Menu
 
             newStrip = new ToolStripMenuItem("New", null, command.AddPage.Action);
             openStrip = new ToolStripMenuItem("Open", null, command.Open.Action);
-            saveStrip = new ToolStripMenuItem("Save", null, command.Save.Action);
-            saveAsStrip = new ToolStripMenuItem("Save as..", null, command.Save.Action);
-            saveCloudStrip = new ToolStripMenuItem("Save in Cloud", null);
-            loadCloudStrip = new ToolStripMenuItem("Load from Cloud", null);
-            exitStrip = new ToolStripMenuItem("Exit", null);
+            saveStrip = new ToolStripMenuItem("Save", null, command.SaveAs.Action);
+            saveAsStrip = new ToolStripMenuItem("Save as..", null, command.SaveAs.Action);
+            saveCloudStrip = new ToolStripMenuItem("Save in Cloud", null, command.SaveCloud.Action);
+            loadCloudStrip = new ToolStripMenuItem("Load from Cloud", null, command.LoadCloud.Action);
+            exitStrip = new ToolStripMenuItem("Exit", null, delegate { Application.Exit(); });
 
             DropDownItems.Add(newStrip);
             DropDownItems.Add(openStrip);

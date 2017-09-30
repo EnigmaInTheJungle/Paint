@@ -20,9 +20,9 @@ namespace Paint.UI.MenuBar
         {
             Text = "View";
 
-            toolBoxStrip = new ToolStripMenuItem("ToolBox", null, command.RenamePage.Action);
-            toolBarStrip = new ToolStripMenuItem("ToolBar", null, command.RemovePage.Action);
-            skinStrip = MenuBar.GetDropDownStrip("Skin", new List<string>() { "Light", "Dark", "Pink" });
+            toolBoxStrip = new ToolStripMenuItem("ToolBox", null);
+            toolBarStrip = new ToolStripMenuItem("ToolBar", null);
+            skinStrip = MenuBar.GetDropDownStrip("Skin", new List<string>() { "Light", "Dark", "Pink" }, command.ChangeSkin.Action);
 
             toolBoxStrip.CheckState = CheckState.Checked;
             toolBarStrip.CheckState = CheckState.Checked;
