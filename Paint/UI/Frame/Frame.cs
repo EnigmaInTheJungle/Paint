@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Paint.Command;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,5 +10,14 @@ namespace Paint.UI.Frame
 {
     public class Frame : Panel
     {
+        public Frame()
+        {
+            Dock = DockStyle.Fill;
+
+            XCommand command = new XCommand();
+            
+            Controls.Add(new Paint.UI.Tabs.Tabs(command));
+            Controls.Add(new Paint.UI.MenuBar.MenuBar(command));
+        }
     }
 }

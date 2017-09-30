@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Paint.UI.Frame;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace Paint
         public Form1()
         {
             InitializeComponent();
+            Controls.Add(new Frame());
         }
     }
 }

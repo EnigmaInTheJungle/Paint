@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Paint.Command;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,5 +10,49 @@ namespace Paint.UI.Tabs
 {
     class Tabs : TabControl
     {
+        XCommand _command;
+        private const string _defName = "Page";
+
+        public Paint.UI.Tabs.Page.Page ActivePage => SelectedTab as Paint.UI.Tabs.Page.Page;
+        //public FigureControl ActiveFigure;
+
+        public Tabs(XCommand command)
+        {
+            Dock = DockStyle.Fill;
+            _command = command;
+
+            AddPage();
+        }
+
+        protected override void OnSelected(TabControlEventArgs e)
+        {
+            //if (SelectedTab != null)
+                //_command.Data = (SelectedTab as Paint.UI.Tabs.Page.Page).CurrentData;
+        }
+
+        public void AddPage(string name = _defName)
+        {
+            Paint.UI.Tabs.Page.Page page = new Paint.UI.Tabs.Page.Page(name);
+            TabPages.Add(page);
+
+            //_command.Data = page.CurrentData;
+            SelectedTab = page;
+
+            //if (TabPages.Count == 1)
+            //    (Parent as Frame).IsAnyTabExist = true;
+        }
+
+        public void RemovePage(TabPage page)
+        {
+            TabPages.Remove(page);
+
+            //if (TabPages.Count == 0)
+            //    (Parent as Frame).IsAnyTabExist = false;
+        }
+        public void RenamePage(string name)
+        {
+            SelectedTab.Text = name;
+            SelectedTab.Name = name;
+        }
     }
 }
