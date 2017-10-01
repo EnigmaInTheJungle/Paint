@@ -18,8 +18,8 @@ namespace Paint.UI.ToolBar
         {
             FileStripList = new ToolStripItem[]
             {
-                new ToolStripButton(null,Properties.Resources.Save,command.Save.Action),
-                new ToolStripButton(null, Properties.Resources.Load, command.Open.Action)
+                new ToolStripButton(null,Properties.Resources.Save,command.Save.Action,"Save"),
+                new ToolStripButton(null, Properties.Resources.Load, command.Open.Action, "Open")        
             };
         }
     }

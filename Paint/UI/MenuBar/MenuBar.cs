@@ -2,6 +2,7 @@
 using Paint.UI.Menu;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Resources;
@@ -18,6 +19,8 @@ namespace Paint.UI.MenuBar
 
         public MenuBar(XCommand command)
         {
+            BackColor = Color.White;            
+
             Items.Add(new FileStrip(command));
             Items.Add(new WindowStrip(command));
             Items.Add(new ViewStrip(command));

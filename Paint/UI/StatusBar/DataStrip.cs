@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Paint.UI.StatusBar
 {
-    public class DataStrip : StatusStrip
+    public class DataStrip 
     {
         ToolStripLabel mPos;
         ToolStripLabel pageName;

@@ -17,8 +17,8 @@ namespace Paint.UI.ToolBar
         {
             CloudStripList = new ToolStripItem[]
             {
-                new ToolStripButton(null,Properties.Resources.SaveC,command.SaveCloud.Action),
-                new ToolStripButton(null,Properties.Resources.LoadC, command.LoadCloud.Action)
+                new ToolStripButton(null,Properties.Resources.SaveC,command.SaveCloud.Action, "Save Cloud"),
+                new ToolStripButton(null,Properties.Resources.LoadC, command.LoadCloud.Action, "Load Cloud")
             };
         }
     }
