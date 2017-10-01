@@ -1,4 +1,5 @@
 ﻿using Paint.Command;
+using Paint.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Paint.UI.Tabs
 {
-    class Tabs : TabControl
+    public class Tabs : TabControl
     {
         XCommand _command;
         private const string _defName = "Page";
@@ -26,8 +27,15 @@ namespace Paint.UI.Tabs
 
         protected override void OnSelected(TabControlEventArgs e)
         {
-            //if (SelectedTab != null)
-                //_command.Data = (SelectedTab as Paint.UI.Tabs.Page.Page).CurrentData;
+            if (SelectedTab != null)
+                _command.Data = (SelectedTab as Paint.UI.Tabs.Page.Page).CurrentData;
+        }
+
+        public void SetNewData(IData data)
+        {
+            ActivePage.DrawPanel.Data = data;
+            _command.Data = data;
+
         }
 
         public void AddPage(string name = _defName)
@@ -35,7 +43,7 @@ namespace Paint.UI.Tabs
             Paint.UI.Tabs.Page.Page page = new Paint.UI.Tabs.Page.Page(name);
             TabPages.Add(page);
 
-            //_command.Data = page.CurrentData;
+            _command.Data = page.CurrentData;
             SelectedTab = page;
 
             //if (TabPages.Count == 1)

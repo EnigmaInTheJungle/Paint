@@ -9,7 +9,7 @@ using Paint.Command;
 
 namespace Paint.UI.ToolBar
 {
-    class CloudStrip : ToolStrip
+    class CloudStrip 
     {
         public ToolStripItem[] CloudStripList { get;  }
 

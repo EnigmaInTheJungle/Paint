@@ -32,7 +32,7 @@ namespace Paint.Command
         public CloudActions.ActionSaveCloud SaveCloud;
 
         public PluginActions.ActionAddPlugin AddPlugin;
-        public PluginActions.ActionRemovePlugin RemovePluginPlugin;
+        public PluginActions.ActionRemovePlugin RemovePlugin;
 
         public SkinActions.ActionChangeSkin ChangeSkin;
 
@@ -51,7 +51,7 @@ namespace Paint.Command
             }
         }
 
-        public XData Data { get; set; }
+        public IData Data { get; set; }
 
         public Frame Frame { get; set; }
 
@@ -77,7 +77,7 @@ namespace Paint.Command
             SaveCloud = new  CloudActions.ActionSaveCloud(this);
 
             AddPlugin = new PluginActions.ActionAddPlugin(this);
-            RemovePluginPlugin = new PluginActions.ActionRemovePlugin(this);
+            RemovePlugin = new PluginActions.ActionRemovePlugin(this);
 
             ChangeSkin = new SkinActions.ActionChangeSkin(this);
         }      

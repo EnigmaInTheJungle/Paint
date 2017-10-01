@@ -14,6 +14,8 @@ namespace Paint.UI.ToolBar
         FileStrip fileStrip;
         CloudStrip cloudStrip;
         
+        
+
         public ToolBar(XCommand command)
         {
             BackColor = Color.White;
@@ -26,6 +28,18 @@ namespace Paint.UI.ToolBar
             Items.AddRange(cloudStrip.CloudStripList);
             Items.Add(new ToolStripSeparator());
         }
-        
+
+        public void AddToolItems(ToolStripItem[] itemList)
+        {
+            Items.AddRange(itemList);
+        }
+
+        public void RemoveToolItems(ToolStripItem[] itemList)
+        {
+            for (int i = 0; i < itemList.Length; i++)
+            {
+                Items.RemoveAt(Items.Count - 1);
+            }           
+        }
     }
 }

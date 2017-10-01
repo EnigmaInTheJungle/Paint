@@ -11,16 +11,13 @@ namespace Paint.UI.DrawPanel
 {
     public class DrawPanel : PictureBox
     {
-        private XData _data;
-        public XData Data => _data;
+        public IData Data { get; set; }
 
         public DrawPanel()
         {
             Dock = DockStyle.Fill;
-
             BackColor = Color.White;
 
-            _data = new XData();
             Image = new Bitmap(Width, Height);
         }
     }

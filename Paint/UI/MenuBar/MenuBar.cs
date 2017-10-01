@@ -14,6 +14,8 @@ namespace Paint.UI.MenuBar
     public class MenuBar : MenuStrip
     {
         public static ResourceManager Localization { get; private set; }
+        int _pluginPos = 1;
+
         public MenuBar(XCommand command)
         {
             Items.Add(new FileStrip(command));
@@ -29,9 +31,25 @@ namespace Paint.UI.MenuBar
             ToolStripMenuItem owner = new ToolStripMenuItem(ownerText, null);
             foreach (string itemText in items)
             {
-                owner.DropDownItems.Add(new ToolStripMenuItem(itemText, null, onClick));
+                owner.DropDownItems.Add(new ToolStripMenuItem(itemText, null, onClick, itemText));
             }
             return owner;
+        }
+
+        public void AddMenuItems(List<ToolStripMenuItem> itemList)
+        {
+            foreach (ToolStripMenuItem item in itemList)
+            {
+                Items.Insert(_pluginPos, item);
+            }
+        }
+
+        public void RemoveMenuItems(List<ToolStripMenuItem> itemList)
+        {
+            foreach (ToolStripMenuItem item in itemList)
+            {
+                Items.RemoveByKey(item.Name);
+            }
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
+using Paint.Data;
 
 namespace Paint.UI.Tabs.Page
 {
@@ -12,21 +13,21 @@ namespace Paint.UI.Tabs.Page
     {
         private static int _count = 0;
 
-        //public DrawPanel DrawPanel => _drawPanel;
-        //private DrawPanel _drawPanel;
+        public Paint.UI.DrawPanel.DrawPanel DrawPanel => _drawPanel;
+        private Paint.UI.DrawPanel.DrawPanel _drawPanel;
 
-        //public XData CurrentData => _drawPanel.Data;
+        public IData CurrentData => _drawPanel.Data;
 
         public Page(string pageText)
         {
             Dock = DockStyle.Fill;
-            BackColor = Color.White;
 
             Text = pageText + ((pageText == "Page") ? _count++.ToString() : "");
             Name = Text;
 
-            //_drawPanel = new DrawPanel();
-            //Controls.Add(_drawPanel);
+            _drawPanel = new Paint.UI.DrawPanel.DrawPanel();
+            Controls.Add(_drawPanel);
         }
+
     }
 }

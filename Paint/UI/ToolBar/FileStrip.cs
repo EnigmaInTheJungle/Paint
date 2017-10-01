@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Paint.UI.ToolBar 
 {
-    public class FileStrip : ToolStrip
+    public class FileStrip 
     {
         public ToolStripItem[] FileStripList { get; }
 
