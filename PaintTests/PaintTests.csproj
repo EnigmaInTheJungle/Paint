@@ -76,6 +76,7 @@
     <Compile Include="AutoTests\TabsTests\TabTests.cs" />
     <Compile Include="AutoTests\ToolBarTests\ToolBarTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitTests\ToolActionTests.cs" />
     <Compile Include="UnitTests\MenuActionTests.cs" />
     <Compile Include="UnitTests\MOCK\UCommand.cs" />
     <Compile Include="UnitTests\MOCK\Actions\CloudActions.cs" />
