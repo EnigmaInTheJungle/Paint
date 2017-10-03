@@ -1,5 +1,7 @@
 ﻿using Paint.Command;
+using Paint.Plugins.Manager;
 using Paint.Plugins.SimpleFigurePlugin;
+using Paint.UI.Managers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,12 +13,12 @@ namespace Paint.UI.Frame
 {
     public class Frame : Panel
     {
-        public MenuBar.MenuBar MenuBar;
-        public DrawFigureType.DrawFigureType DrawFigureType;
+        public Bars.MenuBar MenuBar;
+        public Panels.PluginPanel PluginPanel;
         public Tabs.Tabs Tabs;
-        public ToolBar.ToolBar ToolBar;
-        public StatusBar.StatusBar StatusBar;
-
+        public Bars.ToolBar ToolBar;
+        public Bars.StatusBar StatusBar;
+        
 
         public Frame()
         {
@@ -25,18 +27,28 @@ namespace Paint.UI.Frame
             XCommand command = new XCommand();
             command.Frame = this;
 
-            MenuBar = new MenuBar.MenuBar(command);
-            DrawFigureType = new UI.DrawFigureType.DrawFigureType(command);
-            Tabs = new UI.Tabs.Tabs(command);
-            ToolBar = new UI.ToolBar.ToolBar(command);
-            StatusBar = new UI.StatusBar.StatusBar(command);
+            MenuBar = new Bars.MenuBar(command);
+            PluginPanel = new Panels.PluginPanel(command);
+            Tabs = new Tabs.Tabs(command);
+            ToolBar = new Bars.ToolBar(command);
+            StatusBar = new Bars.StatusBar(command);
+
+            ToolManager.SetToolBar(ToolBar);
+            MenuManager.SetMenuBar(MenuBar);
+            TabsManager.SetTabs(Tabs);
+            PluginManager.SetCommand(command);
+            PluginPanelManager.SetPluginPanel(PluginPanel);
 
             Controls.Add(Tabs);
-
-            Controls.Add(DrawFigureType);
+            Controls.Add(PluginPanel);
             Controls.Add(ToolBar);
             Controls.Add(MenuBar);
             Controls.Add(StatusBar);
+
+            TabsManager.AddPage();
+            PluginManager.ConnectPlugin("Simple Figure");
+            PluginManager.ConnectPlugin("Figure with text");
+            PluginManager.SetActivePlugin("Figure with text");
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using Paint.Data;
 using System.Drawing;
 
-namespace Paint.Plugins.SimpleFigurePlugin
+namespace Paint.Plugins.TextFigurePlugin
 {
     public class Data : IData
     {

@@ -7,18 +7,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Paint.Plugins.SimpleFigurePlugin
+namespace Paint.Plugins.TextFigurePlugin
 {
-    class SimpleFigure : IPlugin
+    class TextFigure : IPlugin
     {
-        public string Name => "Simple Figure";
+        public string Name => "Figure with text";
 
         Data _data;
         public IData Data => _data;
 
         Command.Command command;
 
-        public SimpleFigure(XCommand command)
+        public TextFigure(XCommand command)
         {
             _data = new Data();
             this.command = new Command.Command(command);
@@ -26,7 +26,7 @@ namespace Paint.Plugins.SimpleFigurePlugin
 
         public List<ToolStripMenuItem> GetMenuBarItems()
         {
-            return new List<ToolStripMenuItem>() { new FigureMenuStrip(command) };
+            return new List<ToolStripMenuItem>() { new FigureMenuStrip(command) , new TextMenuStrip(command)};
         }
 
         public UserControl GetPropertyEditor()
@@ -37,7 +37,9 @@ namespace Paint.Plugins.SimpleFigurePlugin
         public ToolStripItem[] GetToolBarItems()
         {
             FigureToolStrip paintStrip = new FigureToolStrip(command);
-            return paintStrip.StripList;
+            TextToolStrip textStrip = new TextToolStrip(command);
+
+            return paintStrip.StripList.Concat(textStrip.StripList).ToArray();
         }
 
         public IData GetNewData()

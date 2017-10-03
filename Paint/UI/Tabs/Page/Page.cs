@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
 using Paint.Data;
+using Paint.UI.Panels;
 
 namespace Paint.UI.Tabs.Page
 {
@@ -13,10 +14,10 @@ namespace Paint.UI.Tabs.Page
     {
         private static int _count = 0;
 
-        public Paint.UI.DrawPanel.DrawPanel DrawPanel => _drawPanel;
-        private Paint.UI.DrawPanel.DrawPanel _drawPanel;
+        public ViewPanel ViewPanel => _viewPanel;
+        private ViewPanel _viewPanel;
 
-        public IData CurrentData => _drawPanel.Data;
+        public IData ActiveData => _viewPanel.Data;
 
         public Page(string pageText)
         {
@@ -25,8 +26,8 @@ namespace Paint.UI.Tabs.Page
             Text = pageText + ((pageText == "Page") ? _count++.ToString() : "");
             Name = Text;
 
-            _drawPanel = new Paint.UI.DrawPanel.DrawPanel();
-            Controls.Add(_drawPanel);
+            _viewPanel = new ViewPanel();
+            Controls.Add(_viewPanel);
         }
 
     }

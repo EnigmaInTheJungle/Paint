@@ -36,6 +36,8 @@ namespace Paint.Command
 
         public SkinActions.ActionChangeSkin ChangeSkin;
 
+        public DataActions.ActionUpdateData UpdateData;
+
 
         Point _point;
         public Point Point
@@ -80,6 +82,8 @@ namespace Paint.Command
             RemovePlugin = new PluginActions.ActionRemovePlugin(this);
 
             ChangeSkin = new SkinActions.ActionChangeSkin(this);
+
+            UpdateData = new DataActions.ActionUpdateData(this);
         }      
 
     }

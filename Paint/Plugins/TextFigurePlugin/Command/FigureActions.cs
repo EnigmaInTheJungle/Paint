@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static Paint.Plugins.SimpleFigurePlugin.Data;
+using static Paint.Plugins.TextFigurePlugin.Data;
 
-namespace Paint.Plugins.SimpleFigurePlugin
+namespace Paint.Plugins.TextFigurePlugin
 {
-    public class SimpleFigureActions
+    public class FigureActions
     {
         public class ActionChangeColor
         {

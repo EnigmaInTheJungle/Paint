@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Paint.Command.Actions.CloudActions" Collapsed="true">
+    <Position X="12" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Command\Actions\CloudActions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.Command.Actions.DataActions" Collapsed="true">
+    <Position X="20.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Command\Actions\DataActions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.Command.Actions.FrameActions">
+    <Position X="13.75" Y="4.5" Width="1.5" />
+    <NestedTypes>
+      <Class Name="Paint.Command.Actions.FrameActions.ActionSaveAs" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Command\Actions\FrameActions.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Paint.Command.Actions.FrameActions.ActionSave" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Command\Actions\FrameActions.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Paint.Command.Actions.FrameActions.ActionOpen" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Command\Actions\FrameActions.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Paint.Command.Actions.FrameActions.ActionStatus" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Command\Actions\FrameActions.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Command\Actions\FrameActions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.Command.Actions.LanguageActions" Collapsed="true">
+    <Position X="17.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Command\Actions\LanguageActions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.Command.Actions.PluginActions" Collapsed="true">
+    <Position X="19" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Command\Actions\PluginActions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.Command.Actions.SkinActions" Collapsed="true">
+    <Position X="22.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Command\Actions\SkinActions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.Command.Actions.TabActions" Collapsed="true">
+    <Position X="15.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Command\Actions\TabActions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.Command.XCommand" Collapsed="true">
+    <Position X="12" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAIAEAAAAoAAAAAAAAAAAFASByBEAABAAgAEAQAU=</HashCode>
+      <FileName>Command\XCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.Form1" Collapsed="true">
+    <Position X="0.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.Program" Collapsed="true">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.PluginManager.PluginManager" Collapsed="true">
+    <Position X="14" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAIAAAAIA=</HashCode>
+      <FileName>PluginManager\PluginManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.Plugins.SimpleFigurePlugin.Command.Command" Collapsed="true">
+    <Position X="12" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAgAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Plugins\SimpleFigurePlugin\Command\Command.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.Plugins.SimpleFigurePlugin.SimpleFigureActions" Collapsed="true">
+    <Position X="12" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Plugins\SimpleFigurePlugin\Command\SimpleFigureActions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.Plugins.SimpleFigurePlugin.Data" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12" Y="1.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAQAAgAAAAAA=</HashCode>
+      <FileName>Plugins\SimpleFigurePlugin\Data.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Paint.Plugins.SimpleFigurePlugin.PaintMenuStrip" Collapsed="true">
+    <Position X="16" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgABGAAAAAAAAAIAAAAAAAACAAAAAgAAA=</HashCode>
+      <FileName>Plugins\SimpleFigurePlugin\PaintMenuStrip.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.Plugins.SimpleFigurePlugin.PaintToolStrip" Collapsed="true">
+    <Position X="14" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Plugins\SimpleFigurePlugin\PaintToolStrip.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.Plugins.SimpleFigurePlugin.SimpleFigure" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAABAAAAAAAAAAAAAQAABRAABAAAAAAAAAAACA=</HashCode>
+      <FileName>Plugins\SimpleFigurePlugin\SimpleFigure.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Paint.Properties.Resources" Collapsed="true">
+    <Position X="16" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAgIAACAQCIAAAAACBEACAQQABAAAAgAAAgAAAAag=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.UI.DrawFigureType.DrawFigureType" Collapsed="true">
+    <Position X="7.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UI\DrawFigureType\DrawFigureType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.UI.DrawPanel.DrawPanel" Collapsed="true">
+    <Position X="0.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>UI\DrawPanel\DrawPanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.UI.Frame.Frame" Collapsed="true">
+    <Position X="0.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAgAAAAAAAAAAAAEAAAACAAIAAAAA=</HashCode>
+      <FileName>UI\Frame\Frame.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.UI.TextInput.TextInput" Collapsed="true">
+    <Position X="9.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAACAAAAMAAACAAEACAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>UI\InputDialog\TextInput.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.UI.Menu.FileStrip" Collapsed="true">
+    <Position X="4.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAABAAAACAAAACAQAAAAQAAAAAACAAAAA=</HashCode>
+      <FileName>UI\MenuBar\FileStrip.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.UI.MenuBar.HelpStrip" Collapsed="true">
+    <Position X="4.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UI\MenuBar\HelpStrip.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.UI.MenuBar.MenuBar" Collapsed="true">
+    <Position X="4.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAEAAAAAAACAAIAAAAAAEAAAAAA=</HashCode>
+      <FileName>UI\MenuBar\MenuBar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.UI.MenuBar.SettingsStrip" Collapsed="true">
+    <Position X="4.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAABAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>UI\MenuBar\SettingsStrip.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.UI.MenuBar.ViewStrip" Collapsed="true">
+    <Position X="4.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAEAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UI\MenuBar\ViewStrip.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.UI.MenuBar.WindowStrip" Collapsed="true">
+    <Position X="4.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAIAgAAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UI\MenuBar\WindowStrip.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.UI.StatusBar.DataStrip" Collapsed="true">
+    <Position X="2.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEBAAAAAAAAAAAAEAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>UI\StatusBar\DataStrip.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.UI.StatusBar.StatusBar" Collapsed="true">
+    <Position X="2.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UI\StatusBar\StatusBar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.UI.Tabs.Page.Page" Collapsed="true">
+    <Position X="0.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAEAAAAAAAAAABAAACAAAAAAAA=</HashCode>
+      <FileName>UI\Tabs\Page\Page.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.UI.Tabs.Tabs" Collapsed="true">
+    <Position X="0.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAgAAAAAAAAgAAAAAAAAgABgAAAAAAAgBAAAAA=</HashCode>
+      <FileName>UI\Tabs\Tabs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.UI.ToolBar.CloudStrip" Collapsed="true">
+    <Position X="6" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UI\ToolBar\CloudStrip.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.UI.ToolBar.FileStrip" Collapsed="true">
+    <Position X="6" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>UI\ToolBar\FileStrip.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.UI.ToolBar.ToolBar" Collapsed="true">
+    <Position X="6" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAABAAAAAAAAAAAAAAAAAAAAgAAAABAA=</HashCode>
+      <FileName>UI\ToolBar\ToolBar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Windows.Forms.ToolStripMenuItem" Collapsed="true">
+    <Position X="9.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="Paint.Data.IData" Collapsed="true">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\IData.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Paint.PluginManager.IPlugin" Collapsed="true">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAQAABBAABAAAAAAAAAAACA=</HashCode>
+      <FileName>PluginManager\IPlugin.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
