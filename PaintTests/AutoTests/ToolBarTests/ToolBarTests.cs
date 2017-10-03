@@ -19,8 +19,8 @@ namespace PaintTests.AutoTests
         [SetUp]
         public void StartUp()
         {
-            Application application = Application.Launch(POM.AppPath);
-            window = application.GetWindow(POM.WindowName, InitializeOption.NoCache);
+            Application application = Application.Launch(@"E:\ORT_1708\Team\Paint\TestFormCreator\bin\Debug\ToolTest");
+            window = application.GetWindow("Form1", InitializeOption.NoCache);
             POM.Window = window;
         }
 
@@ -34,6 +34,37 @@ namespace PaintTests.AutoTests
                 Assert.AreEqual(true, btn.Enabled);
             }
         }
+
+        [Test]
+        public void TestCloudToolBar()
+        {
+            TestToolClick(POM.ToolBar.SaveCloudTool, "SaveCloud");
+            TestToolClick(POM.ToolBar.LoadCloudTool, "LoadCloud");
+        }
+
+        [Test]
+        public void TestFileToolBar()
+        {
+            TestToolClick(POM.ToolBar.SaveTool, "Save");
+            TestToolClick(POM.ToolBar.LoadTool, "Open");
+        }
+
+        [Test]
+        public void TestTabToolBar()
+        {
+            TestToolClick(POM.ToolBar.AddPageTool, "AddPage");
+            TestToolClick(POM.ToolBar.ClosePageTool, "RemovePage");
+            TestToolClick(POM.ToolBar.CloseAllPageTool, "RemoveAllPages");
+        }
+
+        private void TestToolClick(Button btn, string result)
+        {
+            btn.Click();
+
+            if (window.GetElement(SearchCriteria.ByText(result)).Current.Name == result)
+                window.Get<Button>(SearchCriteria.ByText("OK")).Click();
+        }
+
 
         [TearDown]
         public void TearDown()

@@ -14,7 +14,7 @@ namespace Paint.UI.ToolBar.Strips
     {
         public ToolStripItem[] StripList { get; }
 
-        public FileStrip(XCommand command)
+        public FileStrip(ICommand command)
         {
             StripList = new ToolStripItem[]
             {

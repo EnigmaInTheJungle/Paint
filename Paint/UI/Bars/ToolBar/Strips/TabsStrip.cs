@@ -12,7 +12,7 @@ namespace Paint.UI.ToolBar.Strips
     {
         public ToolStripItem[] StripList { get; }
 
-        public TabsStrip(XCommand command)
+        public TabsStrip(ICommand command)
         {
             StripList = new ToolStripItem[]
             {

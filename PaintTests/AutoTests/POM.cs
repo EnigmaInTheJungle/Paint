@@ -64,10 +64,13 @@ namespace PaintTests.AutoTests
 
         public static class ToolBar
         {
-            public static Button SaveTool => Window.ToolStrip.Get<Button>(SearchCriteria.ByText("Save"));
-            public static Button LoadTool => Window.ToolStrip.Get<Button>(SearchCriteria.ByText("Load"));
-            public static Button SaveCloudTool => Window.ToolStrip.Get<Button>(SearchCriteria.ByText("Save Cloud"));
-            public static Button LoadCloudTool => Window.ToolStrip.Get<Button>(SearchCriteria.ByText("Load Cloud"));
+            public static Button AddPageTool => Window.ToolStrip.Get<Button>(SearchCriteria.Indexed(0));
+            public static Button ClosePageTool => Window.ToolStrip.Get<Button>(SearchCriteria.Indexed(1));
+            public static Button CloseAllPageTool => Window.ToolStrip.Get<Button>(SearchCriteria.Indexed(2));
+            public static Button SaveTool => Window.ToolStrip.Get<Button>(SearchCriteria.Indexed(3));
+            public static Button LoadTool => Window.ToolStrip.Get<Button>(SearchCriteria.Indexed(4));
+            public static Button SaveCloudTool => Window.ToolStrip.Get<Button>(SearchCriteria.Indexed(5));
+            public static Button LoadCloudTool => Window.ToolStrip.Get<Button>(SearchCriteria.Indexed(6));
         }
 
         public static class Tabs

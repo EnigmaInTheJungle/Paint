@@ -13,7 +13,7 @@ namespace Paint.UI.ToolBar.Strips
     {
         public ToolStripItem[] StripList { get;  }
 
-        public CloudStrip(XCommand command)
+        public CloudStrip(ICommand command)
         {
             StripList = new ToolStripItem[]
             {

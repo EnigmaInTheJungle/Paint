@@ -22,7 +22,7 @@ namespace TestFormCreator
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Controls.Add(new MenuBar(new ACommand()));
+            Controls.Add(new Paint.UI.Bars.ToolBar(new ACommand()));
         }
     }
 }

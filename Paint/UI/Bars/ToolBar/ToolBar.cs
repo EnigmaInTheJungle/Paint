@@ -16,7 +16,7 @@ namespace Paint.UI.Bars
         CloudStrip cloudStrip;
         TabsStrip tabsStrip;
                
-        public ToolBar(XCommand command)
+        public ToolBar(ICommand command)
         {
             BackColor = Color.White;           
 
