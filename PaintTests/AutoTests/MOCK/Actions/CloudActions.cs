@@ -1,14 +1,17 @@
-﻿using Paint.Command.ActionInterface;
+﻿
+using Paint.Command;
+using Paint.Command.ActionInterface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace Paint.Command.Actions
+namespace PaintTests.AutoTest.Actions
 {
     public class CloudActions
-    {     
+    {
         public class ActionSaveCloud : IAction
         {
             ICommand cmd;
@@ -18,6 +21,7 @@ namespace Paint.Command.Actions
             }
             public void Action(object sender, EventArgs e)
             {
+                MessageBox.Show("SaveCloud", "SaveCloud");
             }
         }
 
@@ -30,6 +34,7 @@ namespace Paint.Command.Actions
             }
             public void Action(object sender, EventArgs e)
             {
+                MessageBox.Show("LoadCloud", "LoadCloud");
             }
         }
     }

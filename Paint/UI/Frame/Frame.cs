@@ -46,8 +46,10 @@ namespace Paint.UI.Frame
             Controls.Add(StatusBar);
 
             TabsManager.AddPage();
+
             PluginManager.ConnectPlugin("Simple Figure");
             PluginManager.ConnectPlugin("Figure with text");
+
             PluginManager.SetActivePlugin("Figure with text");
         }
     }

@@ -47,11 +47,13 @@
   <ItemGroup>
     <Compile Include="Command\Actions\CloudActions.cs" />
     <Compile Include="Command\Actions\DataActions.cs" />
+    <Compile Include="Command\Actions\IAction.cs" />
     <Compile Include="Command\Actions\LanguageActions.cs" />
     <Compile Include="Command\Actions\FrameActions.cs" />
     <Compile Include="Command\Actions\PluginActions.cs" />
     <Compile Include="Command\Actions\SkinActions.cs" />
     <Compile Include="Command\Actions\TabActions.cs" />
+    <Compile Include="Command\ICommand.cs" />
     <Compile Include="Command\XCommand.cs" />
     <Compile Include="Data\IData.cs" />
     <Compile Include="Plugins\TextFigurePlugin\Command\Command.cs" />

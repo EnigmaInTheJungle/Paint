@@ -1,19 +1,17 @@
 ﻿
+using Paint.Command;
 using Paint.Command.ActionInterface;
-using Paint.Command.Actions;
 using Paint.Data;
-using Paint.UI.Frame;
+using PaintTests.AutoTest.Actions;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace Paint.Command
+namespace PaintTests.AutoTest.Command
 {
-    public class XCommand : ICommand
+    public class ACommand : ICommand
     {
         public IAction SaveAs { get; }
         public IAction Open { get; }
@@ -37,30 +35,9 @@ namespace Paint.Command
 
         public IAction ChangeSkin { get; }
 
-        public DataActions.ActionUpdateData UpdateData { get; }
+        IData ICommand.Data { get; set; }
 
-
-        Point _point;
-        public Point Point
-        {
-            get
-            {
-                return _point;
-            }
-            set
-            {
-                _point = value;
-                OnPointChange(_point);
-            }
-        }
-
-        public IData Data { get; set; }
-
-        public Frame Frame { get; set; }
-
-        public Action<Point> OnPointChange;
-
-        public XCommand()
+        public ACommand()
         {
             SaveAs = new FrameActions.ActionSaveAs(this);
             Open = new FrameActions.ActionOpen(this);
@@ -77,15 +54,12 @@ namespace Paint.Command
             ChangeLanguage = new LanguageActions.ActionChangeLanguage(this);
 
             LoadCloud = new CloudActions.ActionLoadCloud(this);
-            SaveCloud = new  CloudActions.ActionSaveCloud(this);
+            SaveCloud = new CloudActions.ActionSaveCloud(this);
 
             AddPlugin = new PluginActions.ActionAddPlugin(this);
             RemovePlugin = new PluginActions.ActionRemovePlugin(this);
 
             ChangeSkin = new SkinActions.ActionChangeSkin(this);
-
-            UpdateData = new DataActions.ActionUpdateData(this);
-        }      
-
+        }
     }
 }

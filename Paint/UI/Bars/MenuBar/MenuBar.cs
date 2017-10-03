@@ -10,7 +10,7 @@ namespace Paint.UI.Bars
     {
         public static ResourceManager Localization { get; private set; }
 
-        public MenuBar(XCommand command)
+        public MenuBar(ICommand command)
         {
             BackColor = Color.White;
 

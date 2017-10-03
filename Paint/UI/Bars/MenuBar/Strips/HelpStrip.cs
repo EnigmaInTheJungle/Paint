@@ -13,7 +13,7 @@ namespace Paint.UI.MenuBar.Strips
         ToolStripMenuItem aboutStrip;
         ToolStripMenuItem helpStrip;
 
-        public HelpStrip(XCommand command)
+        public HelpStrip(ICommand command)
         {
             Text = "Help";
             aboutStrip = new ToolStripMenuItem("About..", null);

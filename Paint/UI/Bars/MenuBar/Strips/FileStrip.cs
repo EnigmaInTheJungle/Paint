@@ -18,7 +18,7 @@ namespace Paint.UI.MenuBar.Strips
         ToolStripMenuItem loadCloudStrip;
         ToolStripMenuItem exitStrip;
 
-        public FileStrip(XCommand command)
+        public FileStrip(ICommand command)
         {
             Text = "File";
 

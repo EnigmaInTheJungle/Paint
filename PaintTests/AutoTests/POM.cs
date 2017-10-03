@@ -38,13 +38,28 @@ namespace PaintTests.AutoTests
             public static Menu SettingsMenu => Window.MenuBar.MenuItemBy(SearchCriteria.ByText("Settings"));
             public static Menu HelpMenu => Window.MenuBar.MenuItemBy(SearchCriteria.ByText("Help"));
 
-            public static Menu SNewMenu => Window.MenuBar.MenuItemBy(SearchCriteria.ByText("File")).SubMenu("New");
-            public static Menu SOpenMenu => Window.MenuBar.MenuItemBy(SearchCriteria.ByText("File")).SubMenu("Open");
-            public static Menu SSaveMenu => Window.MenuBar.MenuItemBy(SearchCriteria.ByText("File")).SubMenu("Save");
-            public static Menu SSaveAsMenu => Window.MenuBar.MenuItemBy(SearchCriteria.ByText("File")).SubMenu("Save as..");
-            public static Menu SSaveCloudMenu => Window.MenuBar.MenuItemBy(SearchCriteria.ByText("File")).SubMenu("Save in Cloud");
-            public static Menu SLoadCloudMenu => Window.MenuBar.MenuItemBy(SearchCriteria.ByText("File")).SubMenu("Load from Cloud");
-            public static Menu SExitMenu => Window.MenuBar.MenuItemBy(SearchCriteria.ByText("File")).SubMenu("Exit");
+            public static Menu SNewMenu => FileMenu.SubMenu("New");
+            public static Menu SOpenMenu => FileMenu.SubMenu("Open");
+            public static Menu SSaveMenu => FileMenu.SubMenu("Save");
+            public static Menu SSaveAsMenu => FileMenu.SubMenu("Save as..");
+            public static Menu SSaveCloudMenu => FileMenu.SubMenu("Save in Cloud");
+            public static Menu SLoadCloudMenu => FileMenu.SubMenu("Load from Cloud");
+
+            public static Menu SRenameMenu => WindowMenu.SubMenu("Rename");
+            public static Menu SCloseMenu => WindowMenu.SubMenu("Close");
+            public static Menu SCloseAllMenu => WindowMenu.SubMenu("CloseAll");
+
+            public static Menu SToolBarMenu => ViewMenu.SubMenu("ToolBar");
+            public static Menu SToolBoxMenu => ViewMenu.SubMenu("ToolBox");
+            public static Menu SDarkMenu => ViewMenu.SubMenu("Skin").SubMenu("Dark");
+            public static Menu SLightMenu => ViewMenu.SubMenu("Skin").SubMenu("Light");
+            public static Menu SPinkMenu => ViewMenu.SubMenu("Skin").SubMenu("Pink");
+
+            public static Menu SSimpleFigMenu => SettingsMenu.SubMenu("Simple Figure");
+            public static Menu STextFigMenu => SettingsMenu.SubMenu("Figure with text");
+            public static Menu SEngMenu => SettingsMenu.SubMenu("Language").SubMenu("English");
+            public static Menu SRusMenu => SettingsMenu.SubMenu("Language").SubMenu("Russian");
+            public static Menu SUkrMenu => SettingsMenu.SubMenu("Language").SubMenu("Ukrainian");
         }
 
         public static class ToolBar

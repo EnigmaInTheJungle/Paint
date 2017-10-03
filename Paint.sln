@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paint", "Paint\Paint.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaintTests", "PaintTests\PaintTests.csproj", "{42C1499E-C85A-4204-A37F-AE27D7CA61F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestFormCreator", "TestFormCreator\TestFormCreator.csproj", "{59D59F62-59C8-4AE4-858D-0830D4C6C32C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{42C1499E-C85A-4204-A37F-AE27D7CA61F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42C1499E-C85A-4204-A37F-AE27D7CA61F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42C1499E-C85A-4204-A37F-AE27D7CA61F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59D59F62-59C8-4AE4-858D-0830D4C6C32C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59D59F62-59C8-4AE4-858D-0830D4C6C32C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59D59F62-59C8-4AE4-858D-0830D4C6C32C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59D59F62-59C8-4AE4-858D-0830D4C6C32C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

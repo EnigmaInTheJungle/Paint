@@ -17,7 +17,7 @@ namespace Paint.UI.MenuBar.Strips
 
         int _pageIndex = 2;
 
-        public ViewStrip(XCommand command)
+        public ViewStrip(ICommand command)
         {
             Text = "View";
 

@@ -13,9 +13,9 @@ namespace Paint.UI.MenuBar.Strips
     class SettingsStrip : ToolStripMenuItem
     {
         ToolStripMenuItem langStrip;
-        XCommand _command;
+        ICommand _command;
 
-        public SettingsStrip(XCommand command)
+        public SettingsStrip(ICommand command)
         {
             _command = command;
 

@@ -1,9 +1,10 @@
-﻿using Paint.Command.ActionInterface;
+﻿using Paint.Command;
+using Paint.Command.ActionInterface;
 using Paint.Plugins.Manager;
 using System;
 using System.Windows.Forms;
 
-namespace Paint.Command.Actions
+namespace PaintTests.AutoTest.Actions
 {
     public class PluginActions
     {
@@ -16,7 +17,7 @@ namespace Paint.Command.Actions
             }
             public void Action(object sender, EventArgs e)
             {
-                PluginManager.ConnectPlugin((sender as ToolStripMenuItem).Text);
+                MessageBox.Show("AddPlugin", "AddPlugin");
             }
         }
 
@@ -29,7 +30,7 @@ namespace Paint.Command.Actions
             }
             public void Action(object sender, EventArgs e)
             {
-                PluginManager.RemovePlugin((sender as ToolStripMenuItem).Text);
+                MessageBox.Show("RemovePlugin", "RemovePlugin");
             }
         }
     }

@@ -1,11 +1,13 @@
-﻿using Paint.Command.ActionInterface;
+﻿using Paint.Command;
+using Paint.Command.ActionInterface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace Paint.Command.Actions
+namespace PaintTests.AutoTest.Actions
 {
     public class LanguageActions
     {
@@ -18,6 +20,7 @@ namespace Paint.Command.Actions
             }
             public void Action(object sender, EventArgs e)
             {
+                MessageBox.Show("Lang", "Lang");
             }
         }
     }

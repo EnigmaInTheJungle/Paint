@@ -11,10 +11,10 @@ namespace Paint.Command.Actions
 {
     public class DataActions
     {
-        public class ActionUpdateData
+        public class ActionUpdateData 
         {
-            XCommand cmd;
-            public ActionUpdateData(XCommand cmd)
+            ICommand cmd;
+            public ActionUpdateData(ICommand cmd)
             {
                 this.cmd = cmd;
             }
