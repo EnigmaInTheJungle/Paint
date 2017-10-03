@@ -15,14 +15,13 @@ namespace Paint.UI.MenuBar.Strips
         ToolStripMenuItem toolBarStrip;
         ToolStripMenuItem skinStrip;
 
-        int _pageIndex = 2;
-
         public ViewStrip(ICommand command)
         {
             Text = "View";
+            Name = "View";
 
-            toolBoxStrip = new ToolStripMenuItem("ToolBox", null);
-            toolBarStrip = new ToolStripMenuItem("ToolBar", null);
+            toolBoxStrip = new ToolStripMenuItem("ToolBox", null,null, "ToolBox");
+            toolBarStrip = new ToolStripMenuItem("ToolBar", null,null, "ToolBar");
             skinStrip = MenuManager.GetDropDownStrip("Skin", new List<string>() { "Light", "Dark", "Pink" }, command.ChangeSkin.Action);
 
             toolBoxStrip.CheckState = CheckState.Checked;

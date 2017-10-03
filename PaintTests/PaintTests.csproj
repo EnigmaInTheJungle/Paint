@@ -76,7 +76,14 @@
     <Compile Include="AutoTests\TabsTests\TabTests.cs" />
     <Compile Include="AutoTests\ToolBarTests\ToolBarTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitTests\DataActionTests.cs" />
+    <Compile Include="UnitTests\MenuActionTests.cs" />
+    <Compile Include="UnitTests\MOCK\UCommand.cs" />
+    <Compile Include="UnitTests\MOCK\Actions\CloudActions.cs" />
+    <Compile Include="UnitTests\MOCK\Actions\FrameActions.cs" />
+    <Compile Include="UnitTests\MOCK\Actions\LanguageActions.cs" />
+    <Compile Include="UnitTests\MOCK\Actions\PluginActions.cs" />
+    <Compile Include="UnitTests\MOCK\Actions\SkinActions.cs" />
+    <Compile Include="UnitTests\MOCK\Actions\TabActions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

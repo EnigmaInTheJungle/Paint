@@ -14,15 +14,14 @@ namespace Paint.UI.MenuBar.Strips
         ToolStripMenuItem closeStrip;
         ToolStripMenuItem closeAllStrip;
 
-        int _pageIndex = 2;
-
         public WindowStrip(ICommand command)
         {
             Text = "Window";
+            Name = "Window";
 
-            renameStrip = new ToolStripMenuItem("Rename", null, command.RenamePage.Action);
-            closeStrip = new ToolStripMenuItem("Close", null, command.RemovePage.Action);
-            closeAllStrip = new ToolStripMenuItem("CloseAll", null, command.RemoveAllPages.Action);
+            renameStrip = new ToolStripMenuItem("Rename", null, command.RenamePage.Action, "Rename");
+            closeStrip = new ToolStripMenuItem("Close", null, command.RemovePage.Action, "Close");
+            closeAllStrip = new ToolStripMenuItem("CloseAll", null, command.RemoveAllPages.Action, "CloseAll");
 
             DropDownItems.Add(renameStrip);
             DropDownItems.Add(new ToolStripSeparator());

@@ -20,10 +20,12 @@ namespace Paint.UI.MenuBar.Strips
             _command = command;
 
             Text = "Settings";
+            Name = "Settings";
+
             langStrip = MenuManager.GetDropDownStrip("Language", new List<string>() { "English", "Russian", "Ukrainian" }, command.ChangeLanguage.Action);
 
-            DropDownItems.Add(new ToolStripMenuItem("Simple Figure", null, ChangeState));
-            DropDownItems.Add(new ToolStripMenuItem("Figure with text", null, ChangeState));
+            DropDownItems.Add(new ToolStripMenuItem("Simple Figure", null, ChangeState, "Simple Figure"));
+            DropDownItems.Add(new ToolStripMenuItem("Figure with text", null, ChangeState, "Figure with text"));
             DropDownItems.Add(new ToolStripSeparator());
             DropDownItems.Add(langStrip);
 

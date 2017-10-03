@@ -21,7 +21,7 @@ namespace Paint.UI.Managers
 
         public static ToolStripMenuItem GetDropDownStrip(string ownerText, List<string> items, EventHandler onClick = null)
         {
-            ToolStripMenuItem owner = new ToolStripMenuItem(ownerText, null);
+            ToolStripMenuItem owner = new ToolStripMenuItem(ownerText, null, null, ownerText);
             foreach (string itemText in items)
             {
                 owner.DropDownItems.Add(new ToolStripMenuItem(itemText, null, onClick, itemText));
