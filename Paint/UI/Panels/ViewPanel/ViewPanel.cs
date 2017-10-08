@@ -14,6 +14,7 @@ namespace Paint.UI.Panels
     public class ViewPanel : PictureBox
     {
         public IData Data { get; set; }
+        public Control ActiveFigure { get; set; }
         private Point _startPoint;
 
         public ViewPanel()
@@ -28,8 +29,15 @@ namespace Paint.UI.Panels
         {
             base.OnMouseDown(e);
 
-            if(e.Button == MouseButtons.Left)
+            if (e.Button == MouseButtons.Left)
+            {
                 _startPoint = e.Location;
+                if (ActiveFigure != null)
+                {
+                    (ActiveFigure as UserControl).BorderStyle = BorderStyle.None;
+                    ActiveFigure = null;
+                }
+            }
         }
 
         protected override void OnMouseMove(MouseEventArgs e)
@@ -41,7 +49,7 @@ namespace Paint.UI.Panels
         {
             base.OnMouseUp(e);
             if (Math.Abs(e.Location.X - _startPoint.X) > 10 && Math.Abs(e.Location.Y - _startPoint.Y) > 10)
-                Controls.Add(PluginManager.ActivePlugin.Figure.NewFigure(_startPoint, e.Location, Data));
+                Controls.Add(PluginManager.ActivePlugin.GetNewFigure(_startPoint, e.Location, Data));
         }
     }
 }

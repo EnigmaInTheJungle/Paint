@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static SimpleFigurePlugin.Data;
 using SimpleFigurePlugin.Command;
+using SimpleFigure.Figure.Control;
 
 namespace SimpleFigurePlugin
 {
@@ -24,7 +25,10 @@ namespace SimpleFigurePlugin
                 ColorDialog cd = new ColorDialog();
                 if (cd.ShowDialog() == DialogResult.OK)
                 {
-                    cmd.Data.Color = cd.Color;
+                    if (Command.Command.ActiveFigure == null)
+                        cmd.Data.Color = cd.Color;
+                    else
+                        Command.Command.ActiveFigure.SetFigureColor(cd.Color);
                 }
             }
         }
@@ -45,13 +49,21 @@ namespace SimpleFigurePlugin
                 else if (sender is ToolStripComboBox)
                     type = (sender as ToolStripComboBox).SelectedItem.ToString();
 
+
+                FType ftype = FType.Rectangle;
+
                 switch (type)
                 {
-                    case "Rectangle": cmd.Data.Type = FType.Rectangle; break;
-                    case "Rounded Rectangle": cmd.Data.Type = FType.RRectangle; break;
-                    case "Ellipse": cmd.Data.Type = FType.Ellipse; break;
-                    case "Line": cmd.Data.Type = FType.Line; break;
+                    case "Rectangle": ftype = FType.Rectangle; break;
+                    case "Rounded Rectangle": ftype = FType.RRectangle; break;
+                    case "Ellipse": ftype = FType.Ellipse; break;
+                    case "Line": ftype = FType.Line; break;
                 }
+
+                if (Command.Command.ActiveFigure == null)
+                    cmd.Data.Type = ftype;
+                else
+                    Command.Command.ActiveFigure.SetFigureType(ftype);
             }
         }
 
@@ -64,10 +76,20 @@ namespace SimpleFigurePlugin
             }
             public void Action(object sender, EventArgs e)
             {
-                if (sender is ToolStripMenuItem)
-                    cmd.Data.StrokeWidth = Convert.ToInt32((sender as ToolStripMenuItem).Text);
-                else if (sender is ToolStripComboBox)
-                    cmd.Data.StrokeWidth = Convert.ToInt32((sender as ToolStripComboBox).SelectedItem.ToString());
+                if (Command.Command.ActiveFigure == null)
+                {
+                    if (sender is ToolStripMenuItem)
+                        cmd.Data.StrokeWidth = Convert.ToInt32((sender as ToolStripMenuItem).Text);
+                    else if (sender is ToolStripComboBox)
+                        cmd.Data.StrokeWidth = Convert.ToInt32((sender as ToolStripComboBox).SelectedItem.ToString());
+                }
+                else
+                {
+                    if (sender is ToolStripMenuItem)
+                        Command.Command.ActiveFigure.SetStrokeWidth(Convert.ToInt32((sender as ToolStripMenuItem).Text));
+                    else if (sender is ToolStripComboBox)
+                        Command.Command.ActiveFigure.SetStrokeWidth(Convert.ToInt32((sender as ToolStripComboBox).SelectedItem.ToString()));
+                }
                
             }
         }

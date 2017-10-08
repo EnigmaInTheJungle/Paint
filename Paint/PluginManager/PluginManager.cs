@@ -1,4 +1,5 @@
 ﻿using Paint.Command;
+using Paint.Data;
 using Paint.Plugins.PluginManager;
 using Paint.UI.Managers;
 using System;
@@ -25,10 +26,11 @@ namespace Paint.Plugins.Manager
             set
             {
                 _activePlugin = value;
-                if(_activePlugin != null)
-                    _command.UpdateData.Action(_activePlugin.GetNewData());
+
+                if (_activePlugin != null)
+                    _command.UpdateData.Action(_activePlugin.GetNewData(), _activePlugin.ActiveFigure);
                 else
-                    _command.UpdateData.Action(null);
+                    _command.UpdateData.Action(null, null);
             }
         }
         public static ICollection<IPlugin> Plugins;
@@ -84,7 +86,6 @@ namespace Paint.Plugins.Manager
                 ToolManager.AddPluginToolItems(GetPlugin(pluginName).GetToolBarItems());
             }
         }
-
         private static Button CreatePluginElement(IPlugin plugin)
         {
             Button btn = new Button

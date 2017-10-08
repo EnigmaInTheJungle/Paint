@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Paint.UI.Managers
 {
@@ -20,11 +21,12 @@ namespace Paint.UI.Managers
             _tabs = tabs;
         }
 
-        public static void SetPluginData(IData data)
+        public static void SetPluginData(IData data, Control figure)
         {
             if (ActivePage != null)
             {
                 ActivePage.ViewPanel.Data = data;
+                ActivePage.ViewPanel.ActiveFigure = figure;
                 _tabs.PullActiveData();
             }
         }

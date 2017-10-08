@@ -1,7 +1,9 @@
 ﻿using Paint.Data;
+using Paint.UI.Panels;
 using Points;
 using SimpleFigure.Figure.Control.Memento;
 using SimpleFigurePlugin;
+using SimpleFigurePlugin.Command;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -52,7 +54,7 @@ namespace SimpleFigure.Figure.Control
                 _resizing = GetSide(e.Location);                            
             }
             Focus();
-            //ComponentEvents.OnActiveFigureChanged(this,e);
+            Command.ActiveFigure = this;
         }
         protected override void OnMouseMove(MouseEventArgs e)
         {
@@ -220,11 +222,5 @@ namespace SimpleFigure.Figure.Control
             Invalidate();
         }
         #endregion
-
-        public System.Windows.Forms.Control NewFigure(Point start, Point end, IData data)
-        {
-            Initialize(new Figure(start, end, (data as Data)));
-            return this;
-        }
     }
 }

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace TextFigurePlugin
 {
@@ -11,9 +12,7 @@ namespace TextFigurePlugin
     {
         public string Name => "Figure with text";
 
-        public IData Data => command.Data;
-
-        public IFigureView Figure => throw new NotImplementedException();
+        public Control ActiveFigure => throw new NotImplementedException();
 
         Command.Command command;
 
@@ -43,6 +42,11 @@ namespace TextFigurePlugin
         public IData GetNewData()
         {
             return new Data();
+        }
+
+        public Control GetNewFigure(Point start, Point end, IData data)
+        {
+            throw new NotImplementedException();
         }
     }
 }

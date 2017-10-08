@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PaintTests.UnitTest.Command
 {
@@ -36,6 +37,7 @@ namespace PaintTests.UnitTest.Command
         public IAction ChangeSkin { get; }
 
         IData ICommand.Data { get; set; }
+        Control ICommand.ActiveFigure { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public string Result;
 

@@ -23,8 +23,9 @@ namespace Paint.Command.Actions
                 TabsManager.AddPage();
                 if (PluginManager.ActivePlugin != null)
                 {
-                    TabsManager.SetPluginData(PluginManager.ActivePlugin.GetNewData());
+                    TabsManager.SetPluginData(PluginManager.ActivePlugin.GetNewData(), PluginManager.ActivePlugin.ActiveFigure);
                     cmd.Data = TabsManager.ActivePage.ActiveData;
+                    cmd.ActiveFigure = TabsManager.ActivePage.ViewPanel.ActiveFigure;
                 }
             }
         }

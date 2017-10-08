@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Paint.Data
+namespace Paint.PluginManager
 {
-    public interface IFigureView
+    class IPluginState
     {
     }
 }

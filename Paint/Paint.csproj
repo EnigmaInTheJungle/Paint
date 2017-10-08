@@ -57,6 +57,7 @@
     <Compile Include="Command\XCommand.cs" />
     <Compile Include="Data\IData.cs" />
     <Compile Include="Data\IFigureView.cs" />
+    <Compile Include="PluginManager\IPluginState.cs" />
     <Compile Include="PluginManager\PluginLoader.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

@@ -29,7 +29,10 @@ namespace Paint.UI.Tabs
         public void PullActiveData()
         {
             if (ActivePage != null)
+            {
                 _command.Data = ActivePage.ActiveData;
+                _command.ActiveFigure = ActivePage.ViewPanel.ActiveFigure;
+            }
         }
     }
 }

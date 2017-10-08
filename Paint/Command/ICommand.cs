@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Paint.Command
 {
@@ -19,7 +20,6 @@ namespace Paint.Command
          IAction AddPage { get; }
          IAction RemovePage { get; }
          IAction RenamePage { get; }
-         IAction ActiveFigure { get; }
          IAction SelectPage { get; }
          IAction RemoveAllPages { get; }
 
@@ -33,6 +33,7 @@ namespace Paint.Command
 
          IAction ChangeSkin { get; }
 
+         Control ActiveFigure { get; set; }
          IData Data { get; set; }
     }
 }

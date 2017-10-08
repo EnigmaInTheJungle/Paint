@@ -8,15 +8,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Drawing;
+using SimpleFigure.Figure;
 
 namespace SimpleFigurePlugin
 {
     class SimpleFigure : IPlugin
     {
         public string Name => "Simple Figure";
-        public IData Data => command.Data;
-        public IFigureView Figure => new FigureControl();
+
+        public Control ActiveFigure => Command.Command.ActiveFigure;
 
         Command.Command command;
 
@@ -29,12 +30,10 @@ namespace SimpleFigurePlugin
         {
             return new List<ToolStripMenuItem>() { new FigureMenuStrip(command) };
         }
-
         public UserControl GetPropertyEditor()
         {
             throw new NotImplementedException();
         }
-
         public ToolStripItem[] GetToolBarItems()
         {
             FigureToolStrip paintStrip = new FigureToolStrip(command);
@@ -44,7 +43,12 @@ namespace SimpleFigurePlugin
         public IData GetNewData()
         {
             command.Data = new Data();
+            Command.Command.ActiveFigure = null;
             return command.Data;
+        }
+        public Control GetNewFigure(Point start, Point end, IData data)
+        {
+            return new FigureControl(new Figure(start, end, (data as Data)));
         }
     }
 }

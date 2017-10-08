@@ -23,7 +23,7 @@ namespace Paint.Command
         public IAction AddPage { get; }
         public IAction RemovePage { get; }
         public IAction RenamePage { get; }
-        public IAction ActiveFigure { get; }
+
         public IAction SelectPage { get; }
         public IAction RemoveAllPages { get; }
 
@@ -38,7 +38,6 @@ namespace Paint.Command
         public IAction ChangeSkin { get; }
 
         public DataActions.ActionUpdateData UpdateData { get; }
-
 
         Point _point;
         public Point Point
@@ -55,6 +54,7 @@ namespace Paint.Command
         }
 
         public IData Data { get; set; }
+        public Control ActiveFigure { get; set; }
 
         public Frame Frame { get; set; }
 
@@ -70,7 +70,6 @@ namespace Paint.Command
             AddPage = new TabActions.ActionAddPage(this);
             RemovePage = new TabActions.ActionRemovePage(this);
             RenamePage = new TabActions.ActionRenamePage(this);
-            ActiveFigure = new TabActions.ActionActiveFigure(this);
             SelectPage = new TabActions.ActionSelectPage(this);
             RemoveAllPages = new TabActions.ActionRemoveAllPages(this);
 

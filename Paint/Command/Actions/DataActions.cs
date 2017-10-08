@@ -18,9 +18,9 @@ namespace Paint.Command.Actions
             {
                 this.cmd = cmd;
             }
-            public void Action(IData data)
+            public void Action(IData data, Control figure)
             {
-                TabsManager.SetPluginData(data);
+                TabsManager.SetPluginData(data, figure);
             }
         }
     }
