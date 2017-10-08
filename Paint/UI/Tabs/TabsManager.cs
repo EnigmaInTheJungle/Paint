@@ -1,4 +1,5 @@
-﻿using Paint.Data;
+﻿using Paint.Command;
+using Paint.Data;
 using Paint.UI.Tabs.Page;
 using System;
 using System.Collections.Generic;

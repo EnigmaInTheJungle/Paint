@@ -38,6 +38,7 @@ namespace Paint.Plugins.Manager
             Plugins = PluginLoader.LoadPlugins(path);
         }
 
+        public static XCommand Command => _command;
         private static XCommand _command;
         public static void SetCommand(XCommand command)
         {

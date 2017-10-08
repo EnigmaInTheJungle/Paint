@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using Paint.Data;
 using Paint.UI.Panels;
+using Paint.UI.Managers;
 
 namespace Paint.UI.Tabs.Page
 {

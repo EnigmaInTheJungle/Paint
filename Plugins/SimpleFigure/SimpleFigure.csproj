@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -45,7 +45,15 @@
     <Compile Include="Command\Command.cs" />
     <Compile Include="Command\SimpleFigureActions.cs" />
     <Compile Include="Data.cs" />
-    <Compile Include="MenuStrips\FigureMenuStrip.cs">
+    <Compile Include="Figure\Figure.cs" />
+    <Compile Include="Figure\FigureControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Figure\FigureDrawing.cs" />
+    <Compile Include="Figure\FigureMemento.cs" />
+    <Compile Include="Figure\FigureTransform.cs" />
+    <Compile Include="Figure\FPoint.cs" />
+    <Compile Include="UI\MenuStrips\FigureMenuStrip.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -55,12 +63,16 @@
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
     <Compile Include="SimpleFigure.cs" />
-    <Compile Include="ToolStrips\FigureToolStrip.cs" />
+    <Compile Include="UI\ToolStrips\FigureToolStrip.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Paint\Paint.csproj">
       <Project>{f482d863-2adb-40bb-beed-a0bed2f92560}</Project>
       <Name>Paint</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TextFigure\TextFigure.csproj">
+      <Project>{17D1A277-E504-4400-BD12-83733E4DC4F2}</Project>
+      <Name>TextFigure</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

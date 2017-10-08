@@ -1,6 +1,7 @@
 ﻿using Paint.Command;
 using Paint.Data;
 using Paint.Plugins;
+using SimpleFigure.Figure.Control;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,8 +15,8 @@ namespace SimpleFigurePlugin
     class SimpleFigure : IPlugin
     {
         public string Name => "Simple Figure";
-
         public IData Data => command.Data;
+        public IFigureView Figure => new FigureControl();
 
         Command.Command command;
 
@@ -42,7 +43,8 @@ namespace SimpleFigurePlugin
 
         public IData GetNewData()
         {
-            return new Data();
+            command.Data = new Data();
+            return command.Data;
         }
     }
 }

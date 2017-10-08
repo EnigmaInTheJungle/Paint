@@ -13,6 +13,8 @@ namespace TextFigurePlugin
 
         public IData Data => command.Data;
 
+        public IFigureView Figure => throw new NotImplementedException();
+
         Command.Command command;
 
         public TextFigure()

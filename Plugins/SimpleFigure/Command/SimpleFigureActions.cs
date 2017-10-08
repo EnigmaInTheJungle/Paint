@@ -24,9 +24,7 @@ namespace SimpleFigurePlugin
                 ColorDialog cd = new ColorDialog();
                 if (cd.ShowDialog() == DialogResult.OK)
                 {
-                    Data data = cmd.Data as Data;
-                    data.Color = cd.Color;
-                    cmd.Data = data;
+                    cmd.Data.Color = cd.Color;
                 }
             }
         }
@@ -40,7 +38,6 @@ namespace SimpleFigurePlugin
             }
             public void Action(object sender, EventArgs e)
             {
-                Data data = cmd.Data as Data;
                 string type = "Rectangle";
 
                 if (sender is ToolStripMenuItem)
@@ -50,12 +47,11 @@ namespace SimpleFigurePlugin
 
                 switch (type)
                 {
-                    case "Rectangle": data.Type = FType.Rectangle; break;
-                    case "Rounded Rectangle": data.Type = FType.RRectangle; break;
-                    case "Ellipse": data.Type = FType.Ellipse; break;
-                    case "Line": data.Type = FType.Line; break;
+                    case "Rectangle": cmd.Data.Type = FType.Rectangle; break;
+                    case "Rounded Rectangle": cmd.Data.Type = FType.RRectangle; break;
+                    case "Ellipse": cmd.Data.Type = FType.Ellipse; break;
+                    case "Line": cmd.Data.Type = FType.Line; break;
                 }
-                cmd.Data = data;
             }
         }
 
@@ -68,14 +64,10 @@ namespace SimpleFigurePlugin
             }
             public void Action(object sender, EventArgs e)
             {
-                Data data = cmd.Data as Data;
-
                 if (sender is ToolStripMenuItem)
-                    data.StrokeWidth = Convert.ToInt32((sender as ToolStripMenuItem).Text);
+                    cmd.Data.StrokeWidth = Convert.ToInt32((sender as ToolStripMenuItem).Text);
                 else if (sender is ToolStripComboBox)
-                    data.StrokeWidth = Convert.ToInt32((sender as ToolStripComboBox).SelectedItem.ToString());
-
-                cmd.Data = data;
+                    cmd.Data.StrokeWidth = Convert.ToInt32((sender as ToolStripComboBox).SelectedItem.ToString());
                
             }
         }

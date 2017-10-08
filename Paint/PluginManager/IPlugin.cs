@@ -11,8 +11,9 @@ namespace Paint.Plugins
     public interface IPlugin
     {
         string Name { get;  }
-
+        IFigureView Figure { get; }
         IData GetNewData();
+        
 
         UserControl GetPropertyEditor();
         List<ToolStripMenuItem> GetMenuBarItems();
