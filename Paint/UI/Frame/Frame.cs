@@ -1,6 +1,5 @@
 ﻿using Paint.Command;
 using Paint.Plugins.Manager;
-using Paint.Plugins.SimpleFigurePlugin;
 using Paint.UI.Managers;
 using System;
 using System.Collections.Generic;
@@ -36,8 +35,10 @@ namespace Paint.UI.Frame
             ToolManager.SetToolBar(ToolBar);
             MenuManager.SetMenuBar(MenuBar);
             TabsManager.SetTabs(Tabs);
+            PluginManager.LoadPlugins();
             PluginManager.SetCommand(command);
             PluginPanelManager.SetPluginPanel(PluginPanel);
+            MenuManager.AddPluginsToMenu(PluginManager.Plugins);
 
             Controls.Add(Tabs);
             Controls.Add(PluginPanel);
@@ -47,10 +48,7 @@ namespace Paint.UI.Frame
 
             TabsManager.AddPage();
 
-            PluginManager.ConnectPlugin("Simple Figure");
-            PluginManager.ConnectPlugin("Figure with text");
-
-            PluginManager.SetActivePlugin("Figure with text");
+            //PluginManager.SetActivePlugin("Figure with text");
         }
     }
 }

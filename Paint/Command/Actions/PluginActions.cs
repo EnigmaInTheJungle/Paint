@@ -16,7 +16,7 @@ namespace Paint.Command.Actions
             }
             public void Action(object sender, EventArgs e)
             {
-                PluginManager.ConnectPlugin((sender as ToolStripMenuItem).Text);
+                PluginManager.ConnectPlugin((sender as ToolStripMenuItem).Name);
             }
         }
 
@@ -29,7 +29,7 @@ namespace Paint.Command.Actions
             }
             public void Action(object sender, EventArgs e)
             {
-                PluginManager.RemovePlugin((sender as ToolStripMenuItem).Text);
+                PluginManager.RemovePlugin((sender as ToolStripMenuItem).Name);
             }
         }
     }

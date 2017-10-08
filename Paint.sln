@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaintTests", "PaintTests\Pa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestFormCreator", "TestFormCreator\TestFormCreator.csproj", "{59D59F62-59C8-4AE4-858D-0830D4C6C32C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleFigure", "Plugins\SimpleFigure\SimpleFigure.csproj", "{5A831C55-8C73-45B5-B859-84D79C1C8B88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextFigure", "Plugins\TextFigure\TextFigure.csproj", "{17D1A277-E504-4400-BD12-83733E4DC4F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{59D59F62-59C8-4AE4-858D-0830D4C6C32C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59D59F62-59C8-4AE4-858D-0830D4C6C32C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59D59F62-59C8-4AE4-858D-0830D4C6C32C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A831C55-8C73-45B5-B859-84D79C1C8B88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A831C55-8C73-45B5-B859-84D79C1C8B88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A831C55-8C73-45B5-B859-84D79C1C8B88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A831C55-8C73-45B5-B859-84D79C1C8B88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17D1A277-E504-4400-BD12-83733E4DC4F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17D1A277-E504-4400-BD12-83733E4DC4F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17D1A277-E504-4400-BD12-83733E4DC4F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17D1A277-E504-4400-BD12-83733E4DC4F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

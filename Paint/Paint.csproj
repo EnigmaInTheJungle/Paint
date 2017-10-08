@@ -56,35 +56,15 @@
     <Compile Include="Command\ICommand.cs" />
     <Compile Include="Command\XCommand.cs" />
     <Compile Include="Data\IData.cs" />
-    <Compile Include="Plugins\TextFigurePlugin\Command\Command.cs" />
-    <Compile Include="Plugins\TextFigurePlugin\Command\TextActions.cs" />
-    <Compile Include="Plugins\TextFigurePlugin\Command\FigureActions.cs" />
-    <Compile Include="Plugins\TextFigurePlugin\Data.cs" />
-    <Compile Include="Plugins\TextFigurePlugin\MenuStrips\TextMenuStrip.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Plugins\TextFigurePlugin\MenuStrips\FigureMenuStrip.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Plugins\TextFigurePlugin\ToolStrips\TextToolStrip.cs" />
-    <Compile Include="Plugins\TextFigurePlugin\ToolStrips\FigureToolStrip.cs" />
-    <Compile Include="Plugins\TextFigurePlugin\TextFigure.cs" />
-    <Compile Include="Plugins\SimpleFigurePlugin\Command\Command.cs" />
-    <Compile Include="Plugins\SimpleFigurePlugin\Data.cs" />
+    <Compile Include="PluginManager\PluginLoader.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Plugins\PluginManager\IPlugin.cs" />
-    <Compile Include="Plugins\PluginManager\PluginManager.cs" />
-    <Compile Include="Plugins\SimpleFigurePlugin\MenuStrips\FigureMenuStrip.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Plugins\SimpleFigurePlugin\ToolStrips\FigureToolStrip.cs" />
-    <Compile Include="Plugins\SimpleFigurePlugin\SimpleFigure.cs" />
-    <Compile Include="Plugins\SimpleFigurePlugin\Command\SimpleFigureActions.cs" />
+    <Compile Include="PluginManager\IPlugin.cs" />
+    <Compile Include="PluginManager\PluginManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
