@@ -94,6 +94,10 @@
       <Project>{F482D863-2ADB-40BB-BEED-A0BED2F92560}</Project>
       <Name>Paint</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PluginInterface\PluginInterface.csproj">
+      <Project>{1A105665-0115-46BB-B693-54BC39279EC4}</Project>
+      <Name>PluginInterface</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

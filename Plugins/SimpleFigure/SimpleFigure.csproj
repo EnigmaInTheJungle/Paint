@@ -67,13 +67,9 @@
     <Compile Include="UI\ToolStrips\FigureToolStrip.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Paint\Paint.csproj">
-      <Project>{f482d863-2adb-40bb-beed-a0bed2f92560}</Project>
-      <Name>Paint</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TextFigure\TextFigure.csproj">
-      <Project>{17D1A277-E504-4400-BD12-83733E4DC4F2}</Project>
-      <Name>TextFigure</Name>
+    <ProjectReference Include="..\..\PluginInterface\PluginInterface.csproj">
+      <Project>{1A105665-0115-46BB-B693-54BC39279EC4}</Project>
+      <Name>PluginInterface</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

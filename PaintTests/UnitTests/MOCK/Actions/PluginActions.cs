@@ -1,9 +1,7 @@
 ﻿using Paint.Command;
 using Paint.Command.ActionInterface;
-using Paint.Plugins.Manager;
 using PaintTests.UnitTest.Command;
 using System;
-using System.Windows.Forms;
 
 namespace PaintTests.UnitTest.Actions
 {

@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using Paint.UI.View;
+using PluginInterface;
 using System.Windows.Forms;
-using System.Drawing;
-using Paint.Data;
-using Paint.UI.Panels;
-using Paint.UI.Managers;
-using Paint.Plugins.Manager;
-using Paint.Plugins;
 
-namespace Paint.UI.Tabs.Page
+namespace Paint.UI.Tab
 {
     public class Page : TabPage
     {
@@ -19,16 +11,9 @@ namespace Paint.UI.Tabs.Page
 
         ViewPanel _viewPanel;
 
-        public IPluginState PageState => _viewPanel.State;
-        public IPlugin PagePlugin => _viewPanel.Plugin;
+        public IPluginContext PageContext{ get => _viewPanel.Context; set => _viewPanel.Context = value; }
 
-        public void SetPagePlugin(IPluginState state, IPlugin plugin)
-        {
-            _viewPanel.State = state;
-            _viewPanel.Plugin = plugin;
-        }
-
-        public Page(string pageText)
+    public Page(string pageText)
         {
             Dock = DockStyle.Fill;
 

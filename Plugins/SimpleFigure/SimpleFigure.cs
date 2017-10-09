@@ -1,35 +1,45 @@
-﻿using Paint.Command;
-using Paint.Data;
-using Paint.Plugins;
-using SimpleFigure.Figure.Control;
+﻿using SimpleFigure.Figure.Control;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
 using SimpleFigure.Figure;
-using Paint.Plugins.Manager;
+using PluginInterface;
 
 namespace SimpleFigurePlugin
 {
     class SimpleFigure : IPlugin
     {
         public string Name => "Simple Figure";
-    
-        public IPluginState GetNewState => new PluginState(command);
 
-        Command.Command command;
+        private PluginContext _context;
+        Command.Command _command;
 
+        public IPluginContext GetNewContext { get { return _context.GetNewContext(this); } }
+        public IPluginContext SetContext
+        {
+            set
+            {
+                _command.Data = value.Data as Data;
+                Command.Command.ActiveFigure = value.ActiveFigure as FigureControl;
+            }
+        }
+
+        public IFigureView FigureView(Point start, Point end, IData data)
+        {
+            return new FigureControl(new Figure(start, end, data as Data));
+        }
+
+       
         public SimpleFigure()
         {
-            command = new Command.Command();
+            _command = new Command.Command();
+            _context = new PluginContext();
         }
 
         public List<ToolStripMenuItem> GetMenuBarItems()
         {
-            return new List<ToolStripMenuItem>() { new FigureMenuStrip(command) };
+            return new List<ToolStripMenuItem>() { new FigureMenuStrip(_command) };
         }
         public UserControl GetPropertyEditor()
         {
@@ -37,13 +47,9 @@ namespace SimpleFigurePlugin
         }
         public ToolStripItem[] GetToolBarItems()
         {
-            FigureToolStrip paintStrip = new FigureToolStrip(command);
+            FigureToolStrip paintStrip = new FigureToolStrip(_command);
             return paintStrip.StripList;
         }
-
-        public Control GetNewFigure(Point start, Point end, IData data)
-        {
-            return new FigureControl(new Figure(start, end, (data as Data)));
-        }
     }
+
 }

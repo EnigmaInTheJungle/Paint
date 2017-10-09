@@ -1,7 +1,5 @@
 ﻿using Paint.Command.ActionInterface;
-using Paint.Plugins;
-using Paint.Plugins.Manager;
-using Paint.UI.Managers;
+using PluginInterface;
 using System;
 using System.Windows.Forms;
 
@@ -11,63 +9,63 @@ namespace Paint.Command.Actions
     {
         public class ActionAddPlugin : IAction
         {
-            ICommand cmd;
+            XCommand cmd;
             public ActionAddPlugin(ICommand cmd)
             {
-                this.cmd = cmd;
+                this.cmd = cmd as XCommand;
             }
             public void Action(object sender, EventArgs e)
             {
-                if (PluginManager.GetPluginByName((sender as ToolStripMenuItem).Name) != null)
-                {
-                    PluginPanelManager.AddPluginElement(PluginManager.CreatePluginElement((sender as ToolStripMenuItem).Name));
-                }
+                cmd.Frame.LeftToolBox.AddPluginElement(
+                    cmd.PluginManager.CreatePluginElement((sender as ToolStripMenuItem).Name));
             }
         }
 
         public class ActionRemovePlugin : IAction
         {
-            ICommand cmd;
+            XCommand cmd;
             public ActionRemovePlugin(ICommand cmd)
             {
-                this.cmd = cmd;
+                this.cmd = cmd as XCommand; 
             }
             public void Action(object sender, EventArgs e)
             {
-                if (PluginManager.GetPluginByName((sender as ToolStripMenuItem).Name) != null)
+                if (cmd.ActivePlugin != null)
                 {
-                    if (cmd.ActivePlugin != null)
-                    {
-                        MenuManager.RemovePluginMenuItems();
-                        ToolManager.RemovePluginToolItems(cmd.ActivePlugin.GetToolBarItems());
-                    }
-                    PluginPanelManager.RemovePluginElement((sender as ToolStripMenuItem).Name);
-                    cmd.ActivePlugin = null;
+                    cmd.Frame.MenuBar.RemovePluginMenuItems();
+                    cmd.Frame.ToolBar.RemovePluginToolItems();
                 }
+                cmd.Frame.LeftToolBox.RemovePluginElement((sender as ToolStripMenuItem).Name);
+                cmd.ActivePlugin = null;
             }
         }
 
         public class ActionSetActivePlugin
         {
-            ICommand cmd;
+            XCommand cmd;
             public ActionSetActivePlugin(ICommand cmd)
             {
-                this.cmd = cmd;
+                this.cmd = cmd as XCommand;
             }
             public void Action(IPlugin plugin)
             {
                 if (cmd.ActivePlugin != null)
                 {
-                    MenuManager.RemovePluginMenuItems();
-                    ToolManager.RemovePluginToolItems(cmd.ActivePlugin.GetToolBarItems());
+                    cmd.Frame.MenuBar.RemovePluginMenuItems();
+                    cmd.Frame.ToolBar.RemovePluginToolItems();
                 }
+                cmd.Frame.MenuBar.AddPluginMenuItems(plugin.GetMenuBarItems());
+                cmd.Frame.ToolBar.AddPluginToolItems(plugin.GetToolBarItems());
+
                 cmd.ActivePlugin = plugin;
-                cmd.ActivePluginState = plugin.GetNewState;
 
-                MenuManager.AddPluginMenuItems(plugin.GetMenuBarItems());
-                ToolManager.AddPluginToolItems(plugin.GetToolBarItems());
+                if (cmd.Frame.Tabs.PageContext == null)
+                {
+                    cmd.Frame.Tabs.PageContext = cmd.ActivePlugin.GetNewContext;
+                    cmd.ActivePlugin.SetContext = cmd.Frame.Tabs.PageContext;
+                }
 
-                TabsManager.SetPagePlugin(cmd.ActivePluginState, cmd.ActivePlugin);
+
             }
         }             
     }

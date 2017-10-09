@@ -1,11 +1,6 @@
-﻿using Paint.Command;
-using Paint.UI.Managers;
-using Paint.UI.MenuBar;
+﻿
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TextFigurePlugin
@@ -26,8 +21,8 @@ namespace TextFigurePlugin
             Name = "Text";
 
             colorStrip = new ToolStripMenuItem("Text Color", null);
-            alignStrip = MenuManager.GetDropDownStrip("Alignment", new List<string>() { "Top", "o Center", "Bottom","Left","o Center","Right" });
-            rotateStrip = MenuManager.GetDropDownStrip("Rotate Text", new List<string>() { "45 deg. turn to right", "45 deg. turn to left" });
+            alignStrip = GetDropDownStrip("Alignment", new List<string>() { "Top", "o Center", "Bottom","Left","o Center","Right" });
+            rotateStrip = GetDropDownStrip("Rotate Text", new List<string>() { "45 deg. turn to right", "45 deg. turn to left" });
             textStrip = new ToolStripMenuItem("Enter Text", null);
             fontStrip = new ToolStripMenuItem("Font", null);
             clearStrip = new ToolStripMenuItem("Clear Text", null);
@@ -45,6 +40,16 @@ namespace TextFigurePlugin
             DropDownItems.Add(rotateStrip);
             DropDownItems.Add(clearStrip);
 
+        }
+
+        private ToolStripMenuItem GetDropDownStrip(string ownerText, List<string> items, EventHandler onClick = null)
+        {
+            ToolStripMenuItem owner = new ToolStripMenuItem(ownerText, null, null, ownerText);
+            foreach (string itemText in items)
+            {
+                owner.DropDownItems.Add(new ToolStripMenuItem(itemText, null, onClick, itemText));
+            }
+            return owner;
         }
     }
 }

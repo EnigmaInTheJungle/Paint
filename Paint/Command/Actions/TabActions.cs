@@ -1,8 +1,4 @@
-﻿
-
-using Paint.Command.ActionInterface;
-using Paint.Plugins.Manager;
-using Paint.UI.Managers;
+﻿using Paint.Command.ActionInterface;
 using Paint.UI.TextInput;
 using System;
 using System.Windows.Forms;
@@ -13,66 +9,62 @@ namespace Paint.Command.Actions
     {
         public class ActionAddPage : IAction
         {
-            ICommand cmd;
+            XCommand cmd;
             public ActionAddPage(ICommand cmd)
             {
-                this.cmd = cmd;
+                this.cmd = cmd as XCommand;
             }
             public void Action(object sender, EventArgs e)
             {
-                TabsManager.AddPage();
-                if (cmd.ActivePlugin != null)
-                {
-                    cmd.ActivePluginState = cmd.ActivePlugin.GetNewState;
-                    TabsManager.SetPagePlugin(cmd.ActivePluginState, cmd.ActivePlugin);
-                }
+                cmd.Frame.Tabs.AddPage();
             }
         }
 
         public class ActionSelectPage : IAction
         {
-            ICommand cmd;
+            XCommand cmd;
             public ActionSelectPage(ICommand cmd)
             {
-                this.cmd = cmd;
+                this.cmd = cmd as XCommand;
             }
             public void Action(object sender, EventArgs e)
-            {                           
+            {
+                if(cmd.Frame.Tabs.PageContext == null)
+                    cmd.Frame.Tabs.PageContext = cmd.ActivePlugin.GetNewContext;
+
                 if (cmd.ActivePlugin != null)
                 {
-                    MenuManager.RemovePluginMenuItems();
-                    ToolManager.RemovePluginToolItems(cmd.ActivePlugin.GetToolBarItems());
+                    cmd.Frame.MenuBar.RemovePluginMenuItems();
+                    cmd.Frame.ToolBar.RemovePluginToolItems();
                 }
-                if (TabsManager.PagePlugin != null)
-                {
-                    cmd.ActivePlugin = TabsManager.PagePlugin;
-                }
-                    MenuManager.AddPluginMenuItems(cmd.ActivePlugin.GetMenuBarItems());
-                    ToolManager.AddPluginToolItems(cmd.ActivePlugin.GetToolBarItems());
 
-                    cmd.ActivePluginState = TabsManager.PageState;
+                cmd.ActivePlugin = cmd.Frame.Tabs.PageContext.Plugin;
+                cmd.ActivePlugin.SetContext = cmd.Frame.Tabs.PageContext;
+
+                cmd.Frame.MenuBar.AddPluginMenuItems(cmd.ActivePlugin.GetMenuBarItems());
+                cmd.Frame.ToolBar.AddPluginToolItems(cmd.ActivePlugin.GetToolBarItems());             
             }
         }
 
         public class ActionRemovePage : IAction
         {
-            ICommand cmd;
+            XCommand cmd;
             public ActionRemovePage(ICommand cmd)
             {
-                this.cmd = cmd;
+                this.cmd = cmd as XCommand;
             }
             public void Action(object sender, EventArgs e)
             {
-                TabsManager.RemovePage();
+                cmd.Frame.Tabs.RemovePage();
             }
         }
 
         public class ActionRemoveAllPages : IAction
         {
-            ICommand cmd;
+            XCommand cmd;
             public ActionRemoveAllPages(ICommand cmd)
             {
-                this.cmd = cmd;
+                this.cmd = cmd as XCommand;
             }
             public void Action(object sender, EventArgs e)
             {
@@ -82,17 +74,17 @@ namespace Paint.Command.Actions
 
         public class ActionRenamePage : IAction
         {
-            ICommand cmd;
+            XCommand cmd;
             public ActionRenamePage(ICommand cmd)
             {
-                this.cmd = cmd;
+                this.cmd = cmd as XCommand;
             }
             public void Action(object sender, EventArgs e)
             {
                 TextInput inputForm = new TextInput();
 
                 if (inputForm.ShowDialog() == DialogResult.OK)
-                    TabsManager.RenamePage(inputForm.resultTxt.Text);
+                    cmd.Frame.Tabs.RenamePage(inputForm.resultTxt.Text);
 
                 inputForm.Dispose();              
             }
@@ -100,10 +92,10 @@ namespace Paint.Command.Actions
 
         public class ActionActiveFigure : IAction
         {
-            ICommand cmd;
+            XCommand cmd;
             public ActionActiveFigure(ICommand cmd)
             {
-                this.cmd = cmd;
+                this.cmd = cmd as XCommand;
             }
             public void Action(object sender, EventArgs e)
             {

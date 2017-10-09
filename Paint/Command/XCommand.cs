@@ -1,22 +1,16 @@
 ﻿
 using Paint.Command.ActionInterface;
 using Paint.Command.Actions;
-using Paint.Data;
 using Paint.UI.Frame;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Paint.Plugins.Manager;
-using Paint.Plugins;
+using PluginInterface;
+using Paint.Managers;
 
 namespace Paint.Command
 {
     public class XCommand : ICommand
-    {
+    {       
         public IAction SaveAs { get; }
         public IAction Open { get; }
         public IAction Status { get; }
@@ -36,12 +30,11 @@ namespace Paint.Command
 
         public IAction AddPlugin { get; }
         public IAction RemovePlugin { get; }
-        public PluginActions.ActionSetActivePlugin SetActivePlugin { get; }
 
         public IAction ChangeSkin { get; }
 
-        public DataActions.ActionUpdateData UpdateData { get; }
-
+        public PluginActions.ActionSetActivePlugin SetActivePlugin { get; }
+      
         Point _point;
         public Point Point
         {
@@ -56,10 +49,13 @@ namespace Paint.Command
             }
         }
 
-        public IPluginState ActivePluginState { get; set; }
-        public IPlugin ActivePlugin { get; set; }
+        public IPluginContext ActivePluginContext { get; set; }
+        public IPlugin ActivePlugin { get; set; }      
 
         public Action<Point> OnPointChange;
+
+        public Frame Frame { get; set; }
+        public PluginManager PluginManager = PluginManager.GetInstance();
 
         public XCommand()
         {
@@ -84,8 +80,6 @@ namespace Paint.Command
             SetActivePlugin = new PluginActions.ActionSetActivePlugin(this);
 
             ChangeSkin = new SkinActions.ActionChangeSkin(this);
-
-            UpdateData = new DataActions.ActionUpdateData(this);
         }      
 
     }

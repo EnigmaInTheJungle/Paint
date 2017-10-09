@@ -10,7 +10,7 @@ using TestStack.White.UIItems.Finders;
 using TestStack.White.UIItems;
 using System.Collections.Generic;
 //using System.Windows.Forms;
-using Paint.UI.Bars;
+using Paint.UI.Menu;
 using PaintTests.AutoTest.Command;
 using System.Diagnostics;
 

@@ -1,16 +1,9 @@
 ﻿
 using Paint.Command;
 using Paint.Command.ActionInterface;
-using Paint.Data;
 using PaintTests.UnitTest.Actions;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Paint.Plugins;
-using Paint.Plugins.Manager;
+using PluginInterface;
 
 namespace PaintTests.UnitTest.Command
 {
@@ -38,8 +31,9 @@ namespace PaintTests.UnitTest.Command
 
         public IAction ChangeSkin { get; }
     
-        public IPluginState ActivePluginState { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public IPlugin ActivePlugin { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public IPluginContext ActivePluginContext { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
 
         public string Result;
 

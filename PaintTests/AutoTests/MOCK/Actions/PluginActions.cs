@@ -1,6 +1,5 @@
 ﻿using Paint.Command;
 using Paint.Command.ActionInterface;
-using Paint.Plugins.Manager;
 using System;
 using System.Windows.Forms;
 

@@ -1,6 +1,5 @@
 ﻿using Paint.Command.ActionInterface;
-using Paint.Plugins;
-using Paint.Plugins.Manager;
+using PluginInterface;
 
 namespace Paint.Command
 {
@@ -27,7 +26,7 @@ namespace Paint.Command
 
          IAction ChangeSkin { get; }
 
-         IPluginState ActivePluginState { get; set; }
+         IPluginContext ActivePluginContext { get; set; }
          IPlugin ActivePlugin { get; set; }
 
     }

@@ -1,7 +1,5 @@
-﻿using Paint.Data;
-using Points;
+﻿using Points;
 using SimpleFigurePlugin;
-using SimpleFigurePlugin.Command;
 using System;
 using System.Drawing;
 using static SimpleFigurePlugin.Data;

@@ -63,9 +63,9 @@
     <Compile Include="ToolStrips\TextToolStrip.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Paint\Paint.csproj">
-      <Project>{f482d863-2adb-40bb-beed-a0bed2f92560}</Project>
-      <Name>Paint</Name>
+    <ProjectReference Include="..\..\PluginInterface\PluginInterface.csproj">
+      <Project>{1A105665-0115-46BB-B693-54BC39279EC4}</Project>
+      <Name>PluginInterface</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -73,12 +73,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\CenterAling.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\CloseAllTab.PNG" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\CloseTab.PNG" />

@@ -1,5 +1,5 @@
 ﻿using Paint.Command;
-using Paint.UI.Bars;
+using Paint.UI.Menu;
 using PaintTests.AutoTest.Command;
 using System;
 using System.Collections.Generic;
@@ -22,7 +22,7 @@ namespace TestFormCreator
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Controls.Add(new Paint.UI.Bars.ToolBar(new ACommand()));
+            Controls.Add(new Paint.UI.Tool.ToolBar(new ACommand()));
         }
     }
 }

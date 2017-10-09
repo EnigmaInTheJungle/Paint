@@ -1,5 +1,4 @@
-﻿using Paint.Data;
-using Paint.UI.Panels;
+﻿using PluginInterface;
 using Points;
 using SimpleFigure.Figure.Control.Memento;
 using SimpleFigurePlugin;
@@ -220,6 +219,11 @@ namespace SimpleFigure.Figure.Control
         {
             _figure.StrokeWidth = width;
             Invalidate();
+        }
+
+        public System.Windows.Forms.Control GetFigureControl()
+        {
+            return this;
         }
         #endregion
     }

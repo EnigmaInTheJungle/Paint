@@ -1,11 +1,10 @@
-﻿using Paint.Data;
-using Paint.Plugins;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using System.Drawing;
-using Paint.Plugins.Manager;
+using PluginInterface;
 
 namespace TextFigurePlugin
 {
@@ -13,13 +12,15 @@ namespace TextFigurePlugin
     {
         public string Name => "Figure with text";
 
-        public IPluginState GetNewState => throw new NotImplementedException();
+        public IPluginContext GetNewContext => throw new NotImplementedException();
+        public IPluginContext SetContext { set => throw new NotImplementedException(); }
+
 
         Command.Command command;
 
         public TextFigure()
         {
-            this.command = new Command.Command();
+            command = new Command.Command();
         }
 
         public List<ToolStripMenuItem> GetMenuBarItems()
@@ -40,7 +41,7 @@ namespace TextFigurePlugin
             return paintStrip.StripList.Concat(textStrip.StripList).ToArray();
         }
 
-        public Control GetNewFigure(Point start, Point end, IData data)
+        public IFigureView FigureView(Point start, Point end, IData data)
         {
             throw new NotImplementedException();
         }

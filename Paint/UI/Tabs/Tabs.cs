@@ -1,20 +1,18 @@
 ﻿using Paint.Command;
-using Paint.Data;
-using Paint.Plugins.Manager;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using PluginInterface;
 using System.Windows.Forms;
 
-namespace Paint.UI.Tabs
+namespace Paint.UI.Tab
 {
     public class Tabs : TabControl
     {
         XCommand _command;
 
-        public Page.Page ActivePage => SelectedTab as Page.Page;
+        public Page ActivePage => SelectedTab as Page;
+
+        public IPluginContext PageContext { get => ActivePage.PageContext; set => ActivePage.PageContext = value; }
+
+        private const string _defaultName = "Page";
 
         public Tabs(XCommand command)
         {
@@ -27,10 +25,22 @@ namespace Paint.UI.Tabs
             _command.SelectPage.Action(this, e);
         }
 
-        public void SetGlobalState()
+        public void AddPage(string name = _defaultName)
         {
-            if (ActivePage != null)
-                _command.ActivePluginState = ActivePage.PageState;
+            Page page = new Page(name);
+            TabPages.Add(page);
+            SelectTab(page);
+        }
+
+        public void RemovePage()
+        {
+            TabPages.Remove(ActivePage);
+        }
+
+        public void RenamePage(string name)
+        {
+            ActivePage.Text = name;
+            ActivePage.Name = name;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Paint.Data;
+﻿
+using PluginInterface;
 using System.Drawing;
 
 namespace TextFigurePlugin

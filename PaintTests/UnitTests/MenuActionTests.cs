@@ -4,7 +4,7 @@ using System.Drawing;
 using Paint.Command;
 using Paint.UI.Frame;
 using PaintTests.UnitTest.Command;
-using Paint.UI.Bars;
+using Paint.UI.Menu;
 using System.Windows.Forms;
 
 namespace Tests

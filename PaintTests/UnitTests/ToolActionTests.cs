@@ -4,7 +4,7 @@ using System.Drawing;
 using Paint.Command;
 using Paint.UI.Frame;
 using PaintTests.UnitTest.Command;
-using Paint.UI.Bars;
+using Paint.UI.Menu;
 using System.Windows.Forms;
 
 namespace Tests
@@ -13,7 +13,7 @@ namespace Tests
     public class ToolActionTests
     {
         UCommand ucommand;
-        Paint.UI.Bars.ToolBar toolBar;
+        Paint.UI.Tool.ToolBar toolBar;
 
         [OneTimeSetUp]
         public void OneTimeSetUp()
@@ -25,7 +25,7 @@ namespace Tests
         public void SetUp()
         {
             ucommand = new UCommand();
-            toolBar = new Paint.UI.Bars.ToolBar(ucommand);
+            toolBar = new Paint.UI.Tool.ToolBar(ucommand);
         }
 
         [TestCase("Save", "Save")]

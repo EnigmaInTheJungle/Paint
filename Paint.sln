@@ -13,6 +13,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleFigure", "Plugins\Sim
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextFigure", "Plugins\TextFigure\TextFigure.csproj", "{17D1A277-E504-4400-BD12-83733E4DC4F2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{3CB012AE-3A53-475A-ACC7-9DEA7409393C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9E116278-3E82-405E-9B0E-CAB0BDB54269}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginInterface", "PluginInterface\PluginInterface.csproj", "{1A105665-0115-46BB-B693-54BC39279EC4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,9 +45,19 @@ Global
 		{17D1A277-E504-4400-BD12-83733E4DC4F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17D1A277-E504-4400-BD12-83733E4DC4F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17D1A277-E504-4400-BD12-83733E4DC4F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A105665-0115-46BB-B693-54BC39279EC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A105665-0115-46BB-B693-54BC39279EC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A105665-0115-46BB-B693-54BC39279EC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A105665-0115-46BB-B693-54BC39279EC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{42C1499E-C85A-4204-A37F-AE27D7CA61F4} = {9E116278-3E82-405E-9B0E-CAB0BDB54269}
+		{59D59F62-59C8-4AE4-858D-0830D4C6C32C} = {9E116278-3E82-405E-9B0E-CAB0BDB54269}
+		{5A831C55-8C73-45B5-B859-84D79C1C8B88} = {3CB012AE-3A53-475A-ACC7-9DEA7409393C}
+		{17D1A277-E504-4400-BD12-83733E4DC4F2} = {3CB012AE-3A53-475A-ACC7-9DEA7409393C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B476478A-DC6C-42DC-B77E-3702ABF785C1}

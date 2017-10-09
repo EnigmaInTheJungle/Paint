@@ -1,31 +1,31 @@
-﻿using Paint.Plugins.Manager;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Paint.Data;
-using System.Windows.Forms;
-using SimpleFigurePlugin;
-using SimpleFigurePlugin.Command;
+﻿using System.Windows.Forms;
 using SimpleFigure.Figure.Control;
+using PluginInterface;
+using System;
 
 namespace SimpleFigurePlugin
 {
-    class PluginState : IPluginState
+    class PluginContext : IPluginContext
     {
-        public IData Data { get => _command.Data; }
-        public Control ActiveFigure { get => Command.Command.ActiveFigure;
-                                            set => Command.Command.ActiveFigure = value as FigureControl; }
+        public IData Data { get; set; }
+        public IFigureView ActiveFigure { get => Command.Command.ActiveFigure; set => Command.Command.ActiveFigure = value as FigureControl; }
+        public IPlugin Plugin { get; set; }
 
-        Command.Command _command;
-
-        public PluginState(Command.Command command)
+        public PluginContext()
         {
-            _command = command;
 
-            _command.Data = new Data();
-            Command.Command.ActiveFigure = null;
+        }
+
+        public PluginContext(IData data, IFigureView activeFigure, IPlugin plugin)
+        {
+            Data = data;
+            ActiveFigure = activeFigure;
+            Plugin = plugin;
+        }
+
+        internal IPluginContext GetNewContext(SimpleFigure simpleFigure)
+        {
+            return new PluginContext(new Data(), null, simpleFigure);
         }
     }
 }

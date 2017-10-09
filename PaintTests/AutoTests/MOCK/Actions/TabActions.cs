@@ -1,10 +1,6 @@
 ﻿
-
 using Paint.Command;
 using Paint.Command.ActionInterface;
-using Paint.Plugins.Manager;
-using Paint.UI.Managers;
-using Paint.UI.TextInput;
 using System;
 using System.Windows.Forms;
 
