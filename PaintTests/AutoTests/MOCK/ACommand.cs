@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Paint.Plugins;
+using Paint.Plugins.Manager;
 
 namespace PaintTests.AutoTest.Command
 {
@@ -36,8 +38,8 @@ namespace PaintTests.AutoTest.Command
 
         public IAction ChangeSkin { get; }
 
-        IData ICommand.Data { get; set; }
-        Control ICommand.ActiveFigure { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public IPluginState ActivePluginState { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public IPlugin ActivePlugin { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public ACommand()
         {

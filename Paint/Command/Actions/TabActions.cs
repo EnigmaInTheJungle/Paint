@@ -21,11 +21,10 @@ namespace Paint.Command.Actions
             public void Action(object sender, EventArgs e)
             {
                 TabsManager.AddPage();
-                if (PluginManager.ActivePlugin != null)
+                if (cmd.ActivePlugin != null)
                 {
-                    TabsManager.SetPluginData(PluginManager.ActivePlugin.GetNewData(), PluginManager.ActivePlugin.ActiveFigure);
-                    cmd.Data = TabsManager.ActivePage.ActiveData;
-                    cmd.ActiveFigure = TabsManager.ActivePage.ViewPanel.ActiveFigure;
+                    cmd.ActivePluginState = cmd.ActivePlugin.GetNewState;
+                    TabsManager.SetPagePlugin(cmd.ActivePluginState, cmd.ActivePlugin);
                 }
             }
         }
@@ -38,8 +37,20 @@ namespace Paint.Command.Actions
                 this.cmd = cmd;
             }
             public void Action(object sender, EventArgs e)
-            {
-                //cmd.Frame.Tab.SelectedTab = cmd.Frame.Tab.TabPages[cmd.Frame.Tab.TabPages.IndexOfKey(name)];
+            {                           
+                if (cmd.ActivePlugin != null)
+                {
+                    MenuManager.RemovePluginMenuItems();
+                    ToolManager.RemovePluginToolItems(cmd.ActivePlugin.GetToolBarItems());
+                }
+                if (TabsManager.PagePlugin != null)
+                {
+                    cmd.ActivePlugin = TabsManager.PagePlugin;
+                }
+                    MenuManager.AddPluginMenuItems(cmd.ActivePlugin.GetMenuBarItems());
+                    ToolManager.AddPluginToolItems(cmd.ActivePlugin.GetToolBarItems());
+
+                    cmd.ActivePluginState = TabsManager.PageState;
             }
         }
 

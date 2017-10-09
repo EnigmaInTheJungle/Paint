@@ -10,14 +10,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
 using SimpleFigure.Figure;
+using Paint.Plugins.Manager;
 
 namespace SimpleFigurePlugin
 {
     class SimpleFigure : IPlugin
     {
         public string Name => "Simple Figure";
-
-        public Control ActiveFigure => Command.Command.ActiveFigure;
+    
+        public IPluginState GetNewState => new PluginState(command);
 
         Command.Command command;
 
@@ -40,12 +41,6 @@ namespace SimpleFigurePlugin
             return paintStrip.StripList;
         }
 
-        public IData GetNewData()
-        {
-            command.Data = new Data();
-            Command.Command.ActiveFigure = null;
-            return command.Data;
-        }
         public Control GetNewFigure(Point start, Point end, IData data)
         {
             return new FigureControl(new Figure(start, end, (data as Data)));

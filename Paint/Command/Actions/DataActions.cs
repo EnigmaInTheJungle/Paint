@@ -20,7 +20,7 @@ namespace Paint.Command.Actions
             }
             public void Action(IData data, Control figure)
             {
-                TabsManager.SetPluginData(data, figure);
+                //TabsManager.SetPluginData(data, figure);
             }
         }
     }

@@ -1,12 +1,6 @@
 ﻿using Paint.Command.ActionInterface;
-using Paint.Command.Actions;
-using Paint.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using Paint.Plugins;
+using Paint.Plugins.Manager;
 
 namespace Paint.Command
 {
@@ -33,7 +27,8 @@ namespace Paint.Command
 
          IAction ChangeSkin { get; }
 
-         Control ActiveFigure { get; set; }
-         IData Data { get; set; }
+         IPluginState ActivePluginState { get; set; }
+         IPlugin ActivePlugin { get; set; }
+
     }
 }

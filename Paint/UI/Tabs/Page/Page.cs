@@ -8,6 +8,8 @@ using System.Drawing;
 using Paint.Data;
 using Paint.UI.Panels;
 using Paint.UI.Managers;
+using Paint.Plugins.Manager;
+using Paint.Plugins;
 
 namespace Paint.UI.Tabs.Page
 {
@@ -15,10 +17,16 @@ namespace Paint.UI.Tabs.Page
     {
         private static int _count = 0;
 
-        public ViewPanel ViewPanel => _viewPanel;
-        private ViewPanel _viewPanel;
+        ViewPanel _viewPanel;
 
-        public IData ActiveData => _viewPanel.Data;
+        public IPluginState PageState => _viewPanel.State;
+        public IPlugin PagePlugin => _viewPanel.Plugin;
+
+        public void SetPagePlugin(IPluginState state, IPlugin plugin)
+        {
+            _viewPanel.State = state;
+            _viewPanel.Plugin = plugin;
+        }
 
         public Page(string pageText)
         {

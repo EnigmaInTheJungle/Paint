@@ -10,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Paint.Plugins.Manager;
+using Paint.Plugins;
 
 namespace Paint.Command
 {
@@ -34,6 +36,7 @@ namespace Paint.Command
 
         public IAction AddPlugin { get; }
         public IAction RemovePlugin { get; }
+        public PluginActions.ActionSetActivePlugin SetActivePlugin { get; }
 
         public IAction ChangeSkin { get; }
 
@@ -53,10 +56,8 @@ namespace Paint.Command
             }
         }
 
-        public IData Data { get; set; }
-        public Control ActiveFigure { get; set; }
-
-        public Frame Frame { get; set; }
+        public IPluginState ActivePluginState { get; set; }
+        public IPlugin ActivePlugin { get; set; }
 
         public Action<Point> OnPointChange;
 
@@ -80,6 +81,7 @@ namespace Paint.Command
 
             AddPlugin = new PluginActions.ActionAddPlugin(this);
             RemovePlugin = new PluginActions.ActionRemovePlugin(this);
+            SetActivePlugin = new PluginActions.ActionSetActivePlugin(this);
 
             ChangeSkin = new SkinActions.ActionChangeSkin(this);
 

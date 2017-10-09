@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using System.Drawing;
+using Paint.Plugins.Manager;
 
 namespace TextFigurePlugin
 {
@@ -12,7 +13,7 @@ namespace TextFigurePlugin
     {
         public string Name => "Figure with text";
 
-        public Control ActiveFigure => throw new NotImplementedException();
+        public IPluginState GetNewState => throw new NotImplementedException();
 
         Command.Command command;
 
@@ -37,11 +38,6 @@ namespace TextFigurePlugin
             TextToolStrip textStrip = new TextToolStrip(command);
 
             return paintStrip.StripList.Concat(textStrip.StripList).ToArray();
-        }
-
-        public IData GetNewData()
-        {
-            return new Data();
         }
 
         public Control GetNewFigure(Point start, Point end, IData data)

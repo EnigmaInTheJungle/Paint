@@ -16,23 +16,6 @@ namespace Paint.Plugins.Manager
 {
     public class PluginManager
     {
-        private static IPlugin _activePlugin;
-        public static IPlugin ActivePlugin
-        {
-            get
-            {
-                return _activePlugin;
-            }
-            set
-            {
-                _activePlugin = value;
-
-                if (_activePlugin != null)
-                    _command.UpdateData.Action(_activePlugin.GetNewData(), _activePlugin.ActiveFigure);
-                else
-                    _command.UpdateData.Action(null, null);
-            }
-        }
         public static ICollection<IPlugin> Plugins;
 
         public static void LoadPlugins(string path = @"E:\ORT_1708\Team\Paint\Plugins")
@@ -47,69 +30,35 @@ namespace Paint.Plugins.Manager
             _command = command;
         }
 
-        public static void ConnectPlugin(string pluginName)
-        {
-            if(GetPlugin(pluginName) != null)
-                PluginPanelManager.AddPluginElement(CreatePluginElement(GetPlugin(pluginName)));           
-        }
-        public static void RemovePlugin(string pluginName)
-        {
-            if (GetPlugin(pluginName) != null)
-            {
-                if (ActivePlugin != null)
-                {
-                    MenuManager.RemovePluginMenuItems();
-                    ToolManager.RemovePluginToolItems(ActivePlugin.GetToolBarItems());
-                }
-                PluginPanelManager.RemovePluginElement(pluginName);
-                ActivePlugin = null;
-            }
-        }
 
-        public static IPlugin GetPlugin(string pluginName)
+        public static IPlugin GetPluginByName(string pluginName)
         {
             return Plugins.First(x => x.Name == pluginName);
         }
-
-        public static void SetActivePlugin(string pluginName)
+        public static Button CreatePluginElement(string pluginName)
         {
-            if (GetPlugin(pluginName) != null)
+            if (GetPluginByName(pluginName) != null)
             {
-                if (ActivePlugin != null)
+                IPlugin plugin = GetPluginByName(pluginName);
+                Button btn = new Button
                 {
-                    MenuManager.RemovePluginMenuItems();
-                    ToolManager.RemovePluginToolItems(ActivePlugin.GetToolBarItems());
-                }
-
-                ActivePlugin = GetPlugin(pluginName);
-                MenuManager.AddPluginMenuItems(GetPlugin(pluginName).GetMenuBarItems());
-                ToolManager.AddPluginToolItems(GetPlugin(pluginName).GetToolBarItems());
+                    Name = plugin.Name,
+                    Text = plugin.Name,
+                    FlatStyle = FlatStyle.Flat,
+                    BackColor = Color.WhiteSmoke,
+                    Height = 40,
+                    Dock = DockStyle.Top
+                };
+                btn.Click += (s, e) =>
+                {
+                    _command.SetActivePlugin.Action(plugin);
+                };
+                return btn;
             }
-        }
-        private static Button CreatePluginElement(IPlugin plugin)
-        {
-            Button btn = new Button
+            else
             {
-                Name = plugin.Name,
-                Text = plugin.Name,
-                FlatStyle = FlatStyle.Flat,
-                BackColor = Color.WhiteSmoke,
-                Height = 40,
-                Dock = DockStyle.Top
-            };
-            btn.Click += (s, e) =>
-            {
-                if (ActivePlugin != null)
-                {
-                    MenuManager.RemovePluginMenuItems();
-                    ToolManager.RemovePluginToolItems(ActivePlugin.GetToolBarItems());
-                }
-
-                ActivePlugin = plugin;
-                MenuManager.AddPluginMenuItems(plugin.GetMenuBarItems());
-                ToolManager.AddPluginToolItems(plugin.GetToolBarItems());               
-            };
-            return btn;
+                throw new FileNotFoundException();
+            }
         }
     }
 }

@@ -53,6 +53,7 @@
     <Compile Include="Figure\FigureMemento.cs" />
     <Compile Include="Figure\FigureTransform.cs" />
     <Compile Include="Figure\FPoint.cs" />
+    <Compile Include="PluginState.cs" />
     <Compile Include="UI\MenuStrips\FigureMenuStrip.cs">
       <SubType>Component</SubType>
     </Compile>

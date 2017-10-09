@@ -24,7 +24,6 @@ namespace Paint.UI.Frame
             Dock = DockStyle.Fill;
 
             XCommand command = new XCommand();
-            command.Frame = this;
 
             MenuBar = new Bars.MenuBar(command);
             PluginPanel = new Panels.PluginPanel(command);
@@ -46,7 +45,7 @@ namespace Paint.UI.Frame
             Controls.Add(MenuBar);
             Controls.Add(StatusBar);
 
-            TabsManager.AddPage();
+            command.AddPage.Action(this, new EventArgs());
 
             //PluginManager.SetActivePlugin("Figure with text");
         }

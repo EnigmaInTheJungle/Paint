@@ -1,5 +1,6 @@
 ﻿using Paint.Command;
 using Paint.Data;
+using Paint.Plugins.Manager;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,16 +24,13 @@ namespace Paint.UI.Tabs
 
         protected override void OnSelected(TabControlEventArgs e)
         {
-            PullActiveData();
+            _command.SelectPage.Action(this, e);
         }
 
-        public void PullActiveData()
+        public void SetGlobalState()
         {
             if (ActivePage != null)
-            {
-                _command.Data = ActivePage.ActiveData;
-                _command.ActiveFigure = ActivePage.ViewPanel.ActiveFigure;
-            }
+                _command.ActivePluginState = ActivePage.PageState;
         }
     }
 }
