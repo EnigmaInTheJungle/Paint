@@ -4,6 +4,8 @@ using Paint.Command.ActionInterface;
 using PaintTests.AutoTest.Actions;
 using System;
 using PluginInterface;
+using Paint.Managers;
+using Paint.UI.Frame;
 
 namespace PaintTests.AutoTest.Command
 {
@@ -31,8 +33,37 @@ namespace PaintTests.AutoTest.Command
 
         public IAction ChangeSkin { get; }
 
-        public IPluginContext ActivePluginContext { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public IPlugin ActivePlugin { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public IPluginContext ActivePluginContext { get { throw new NotImplementedException(); } set { throw new NotImplementedException(); } }
+        public IPlugin ActivePlugin { get { throw new NotImplementedException(); } set { throw new NotImplementedException(); } }
+
+        public IAction SetActivePlugin
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public Frame Frame
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public PluginManager PluginManager
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
 
         public ACommand()
         {

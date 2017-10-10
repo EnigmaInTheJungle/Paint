@@ -9,10 +9,10 @@ namespace Paint.Command.Actions
     {
         public class ActionAddPlugin : IAction
         {
-            XCommand cmd;
+            ICommand cmd;
             public ActionAddPlugin(ICommand cmd)
             {
-                this.cmd = cmd as XCommand;
+                this.cmd = cmd as ICommand;
             }
             public void Action(object sender, EventArgs e)
             {
@@ -23,10 +23,10 @@ namespace Paint.Command.Actions
 
         public class ActionRemovePlugin : IAction
         {
-            XCommand cmd;
+            ICommand cmd;
             public ActionRemovePlugin(ICommand cmd)
             {
-                this.cmd = cmd as XCommand; 
+                this.cmd = cmd as ICommand; 
             }
             public void Action(object sender, EventArgs e)
             {
@@ -40,20 +40,23 @@ namespace Paint.Command.Actions
             }
         }
 
-        public class ActionSetActivePlugin
+        public class ActionSetActivePlugin : IAction
         {
-            XCommand cmd;
+            ICommand cmd;
             public ActionSetActivePlugin(ICommand cmd)
             {
-                this.cmd = cmd as XCommand;
+                this.cmd = cmd as ICommand;
             }
-            public void Action(IPlugin plugin)
+            public void Action(object sender, EventArgs e) 
             {
                 if (cmd.ActivePlugin != null)
                 {
                     cmd.Frame.MenuBar.RemovePluginMenuItems();
                     cmd.Frame.ToolBar.RemovePluginToolItems();
                 }
+
+                IPlugin plugin = cmd.PluginManager.GetPluginByName((sender as Button).Text);
+
                 cmd.Frame.MenuBar.AddPluginMenuItems(plugin.GetMenuBarItems());
                 cmd.Frame.ToolBar.AddPluginToolItems(plugin.GetToolBarItems());
 

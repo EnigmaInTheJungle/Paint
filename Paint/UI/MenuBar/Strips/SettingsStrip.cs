@@ -9,7 +9,6 @@ namespace Paint.UI.Menu.Strips
 {
     class SettingsStrip : ToolStripMenuItem
     {
-        ToolStripMenuItem langStrip;
         private int _defPluginCount = 2;
         ICommand _command;
 

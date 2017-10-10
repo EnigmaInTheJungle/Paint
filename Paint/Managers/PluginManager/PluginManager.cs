@@ -10,7 +10,7 @@ namespace Paint.Managers
     public class PluginManager
     {
         public ICollection<IPlugin> Plugins;
-        public XCommand Command { get; set; }
+        public ICommand Command { get; set; }
 
         private static PluginManager instance = new PluginManager();
         private PluginManager()
@@ -45,7 +45,7 @@ namespace Paint.Managers
                 };
                 btn.Click += (s, e) =>
                 {
-                    Command.SetActivePlugin.Action(plugin);
+                    Command.SetActivePlugin.Action(s,e);
                 };
                 return btn;
         }

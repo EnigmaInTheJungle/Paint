@@ -9,10 +9,10 @@ namespace Paint.Command.Actions
     {
         public class ActionAddPage : IAction
         {
-            XCommand cmd;
+            ICommand cmd;
             public ActionAddPage(ICommand cmd)
             {
-                this.cmd = cmd as XCommand;
+                this.cmd = cmd as ICommand;
             }
             public void Action(object sender, EventArgs e)
             {
@@ -22,10 +22,10 @@ namespace Paint.Command.Actions
 
         public class ActionSelectPage : IAction
         {
-            XCommand cmd;
+            ICommand cmd;
             public ActionSelectPage(ICommand cmd)
             {
-                this.cmd = cmd as XCommand;
+                this.cmd = cmd as ICommand;
             }
             public void Action(object sender, EventArgs e)
             {
@@ -48,10 +48,10 @@ namespace Paint.Command.Actions
 
         public class ActionRemovePage : IAction
         {
-            XCommand cmd;
+            ICommand cmd;
             public ActionRemovePage(ICommand cmd)
             {
-                this.cmd = cmd as XCommand;
+                this.cmd = cmd as ICommand;
             }
             public void Action(object sender, EventArgs e)
             {
@@ -61,10 +61,10 @@ namespace Paint.Command.Actions
 
         public class ActionRemoveAllPages : IAction
         {
-            XCommand cmd;
+            ICommand cmd;
             public ActionRemoveAllPages(ICommand cmd)
             {
-                this.cmd = cmd as XCommand;
+                this.cmd = cmd as ICommand;
             }
             public void Action(object sender, EventArgs e)
             {
@@ -74,10 +74,10 @@ namespace Paint.Command.Actions
 
         public class ActionRenamePage : IAction
         {
-            XCommand cmd;
+            ICommand cmd;
             public ActionRenamePage(ICommand cmd)
             {
-                this.cmd = cmd as XCommand;
+                this.cmd = cmd as ICommand;
             }
             public void Action(object sender, EventArgs e)
             {
@@ -92,10 +92,10 @@ namespace Paint.Command.Actions
 
         public class ActionActiveFigure : IAction
         {
-            XCommand cmd;
+            ICommand cmd;
             public ActionActiveFigure(ICommand cmd)
             {
-                this.cmd = cmd as XCommand;
+                this.cmd = cmd as ICommand;
             }
             public void Action(object sender, EventArgs e)
             {

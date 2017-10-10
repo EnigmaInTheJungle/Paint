@@ -22,7 +22,7 @@ namespace Paint.UI.Frame
         {
             Dock = DockStyle.Fill;
 
-            XCommand command = new XCommand();
+            ICommand command = new XCommand();
             command.Frame = this;
 
             PluginManager plgManager = PluginManager.GetInstance();
@@ -49,7 +49,7 @@ namespace Paint.UI.Frame
             Controls.Add(StatusBar);
 
             command.AddPage.Action(this, new EventArgs());
-            command.SetActivePlugin.Action(plgManager.Plugins.First());
+            command.SetActivePlugin.Action(new Button() { Text = plgManager.Plugins.First().Name }, new EventArgs());
         }
     }
 }

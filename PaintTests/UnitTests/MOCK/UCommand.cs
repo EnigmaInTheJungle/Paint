@@ -4,6 +4,8 @@ using Paint.Command.ActionInterface;
 using PaintTests.UnitTest.Actions;
 using System;
 using PluginInterface;
+using Paint.Managers;
+using Paint.UI.Frame;
 
 namespace PaintTests.UnitTest.Command
 {
@@ -31,9 +33,63 @@ namespace PaintTests.UnitTest.Command
 
         public IAction ChangeSkin { get; }
     
-        public IPlugin ActivePlugin { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public IPluginContext ActivePluginContext { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public IPlugin ActivePlugin { get { throw new NotImplementedException(); } set { throw new NotImplementedException(); } }
+        public IPluginContext ActivePluginContext { get { throw new NotImplementedException(); } set { throw new NotImplementedException(); } }
+        
+        public IAction SetActivePlugin
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
 
+        IPluginContext ICommand.ActivePluginContext
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        IPlugin ICommand.ActivePlugin
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public Frame Frame
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public PluginManager PluginManager
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
 
         public string Result;
 

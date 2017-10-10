@@ -1,4 +1,6 @@
 ﻿using Paint.Command.ActionInterface;
+using Paint.Managers;
+using Paint.UI.Frame;
 using PluginInterface;
 
 namespace Paint.Command
@@ -23,11 +25,14 @@ namespace Paint.Command
 
          IAction AddPlugin { get; }
          IAction RemovePlugin { get; }
+         IAction SetActivePlugin { get; }
 
          IAction ChangeSkin { get; }
 
          IPluginContext ActivePluginContext { get; set; }
          IPlugin ActivePlugin { get; set; }
 
+         Frame Frame { get; set; }
+         PluginManager PluginManager { get; }
     }
 }

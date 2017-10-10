@@ -33,7 +33,7 @@ namespace Paint.Command
 
         public IAction ChangeSkin { get; }
 
-        public PluginActions.ActionSetActivePlugin SetActivePlugin { get; }
+        public IAction SetActivePlugin { get; }
       
         Point _point;
         public Point Point
@@ -55,7 +55,7 @@ namespace Paint.Command
         public Action<Point> OnPointChange;
 
         public Frame Frame { get; set; }
-        public PluginManager PluginManager = PluginManager.GetInstance();
+        public PluginManager PluginManager => PluginManager.GetInstance();
 
         public XCommand()
         {

@@ -11,7 +11,7 @@ namespace Paint.UI.Tab
 
         ViewPanel _viewPanel;
 
-        public IPluginContext PageContext{ get => _viewPanel.Context; set => _viewPanel.Context = value; }
+        public IPluginContext PageContext{ get { return _viewPanel.Context; } set { _viewPanel.Context = value; } }
 
         public Page(string pageText)
         {

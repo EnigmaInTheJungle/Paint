@@ -13,7 +13,7 @@ namespace Paint.UI.ToolBox
 {
     public partial class LeftToolBox : Panel
     {
-        public LeftToolBox(XCommand command)
+        public LeftToolBox(ICommand command)
         {
             Dock = DockStyle.Left;
             BackColor = Color.DarkBlue;

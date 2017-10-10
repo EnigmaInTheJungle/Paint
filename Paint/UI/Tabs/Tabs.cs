@@ -6,15 +6,15 @@ namespace Paint.UI.Tab
 {
     public class Tabs : TabControl
     {
-        XCommand _command;
+        ICommand _command;
 
         public Page ActivePage => SelectedTab as Page;
 
-        public IPluginContext PageContext { get => ActivePage.PageContext; set => ActivePage.PageContext = value; }
-
+        public IPluginContext PageContext { get { return ActivePage.PageContext; } set { ActivePage.PageContext = value; } }
+        
         private const string _defaultName = "Page";
 
-        public Tabs(XCommand command)
+        public Tabs(ICommand command)
         {
             Dock = DockStyle.Fill;
             _command = command;

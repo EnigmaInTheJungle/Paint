@@ -8,7 +8,7 @@ namespace Paint.UI.Status
         ToolStripLabel mPos;
         ToolStripLabel pageName;
 
-        public StatusBar(XCommand command)
+        public StatusBar(ICommand command)
         {
             mPos = new ToolStripLabel();
             pageName = new ToolStripLabel();
