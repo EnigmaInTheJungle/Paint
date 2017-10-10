@@ -2,6 +2,7 @@
 using Paint.Managers;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,9 +24,7 @@ namespace Paint.UI.Menu.Strips
         {
             LanguageManager langMang = LanguageManager.GetInstance();
             Name = "File";
-            Text = langMang.GetValue(Name);
-
-            
+            Text = langMang.GetValue(Name);                      
 
             newStrip = new ToolStripMenuItem(langMang.GetValue("New"), null, command.AddPage.Action, "New");
             openStrip = new ToolStripMenuItem(langMang.GetValue("Open"), null, command.Open.Action, "Open");

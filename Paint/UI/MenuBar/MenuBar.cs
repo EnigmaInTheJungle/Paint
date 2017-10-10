@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using SkinInterface;
 
 namespace Paint.UI.Menu
 {
@@ -13,7 +14,8 @@ namespace Paint.UI.Menu
     {
         public MenuBar(ICommand command)
         {
-            BackColor = Color.White;
+            BackColor = SkinManager.GetInstance().Skin.MainColor;
+            BackgroundImage = SkinManager.GetInstance().Skin.MainBackground;
 
             Items.Add(new FileStrip(command));
             Items.Add(new PaintStrip());
@@ -33,6 +35,11 @@ namespace Paint.UI.Menu
                 owner.DropDownItems.Add(new ToolStripMenuItem(langMang.GetValue(itemText), null, onClick, itemText));
             }
             return owner;
+        }
+
+        internal void AddSkinsToMenu(List<ISkin> skins)
+        {
+            (Items["View"] as ViewStrip).AddSkinsToMenu(skins);
         }
 
         public void AddPluginsToMenu(ICollection<IPlugin> plugins)

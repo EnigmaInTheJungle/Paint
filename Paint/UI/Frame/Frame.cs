@@ -25,17 +25,22 @@ namespace Paint.UI.Frame
             XCommand command = new XCommand();
             command.Frame = this;
 
+            PluginManager plgManager = PluginManager.GetInstance();
+            plgManager.Command = command;
+            plgManager.LoadPlugins();
+
+            SkinManager sknManager = SkinManager.GetInstance();
+            sknManager.LoadSkins();
+
             MenuBar = new MenuBar(command);
             LeftToolBox = new LeftToolBox(command);
             Tabs = new Tabs(command);
             ToolBar = new Tool.ToolBar(command);
             StatusBar = new StatusBar();
 
-            PluginManager plgManager = PluginManager.GetInstance();
-            plgManager.Command = command;
-            plgManager.LoadPlugins();
-
+            
             MenuBar.AddPluginsToMenu(plgManager.Plugins);
+            MenuBar.AddSkinsToMenu(sknManager.Skins);
 
             Controls.Add(Tabs);
             Controls.Add(LeftToolBox);

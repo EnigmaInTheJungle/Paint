@@ -108,9 +108,9 @@ namespace Paint.Resources.Localization {
         /// <summary>
         ///   Looks up a localized string similar to Exit.
         /// </summary>
-        internal static string Exi {
+        internal static string Exit {
             get {
-                return ResourceManager.GetString("Exi", resourceCulture);
+                return ResourceManager.GetString("Exit", resourceCulture);
             }
         }
         
@@ -264,6 +264,24 @@ namespace Paint.Resources.Localization {
         internal static string Skins {
             get {
                 return ResourceManager.GetString("Skins", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ToolBar.
+        /// </summary>
+        internal static string ToolBar {
+            get {
+                return ResourceManager.GetString("ToolBar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ToolBox.
+        /// </summary>
+        internal static string ToolBox {
+            get {
+                return ResourceManager.GetString("ToolBox", resourceCulture);
             }
         }
         

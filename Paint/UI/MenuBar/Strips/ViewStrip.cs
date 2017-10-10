@@ -1,7 +1,10 @@
 ﻿using Paint.Command;
 using Paint.Managers;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
+using SkinInterface;
+using System;
 
 namespace Paint.UI.Menu.Strips
 {
@@ -11,16 +14,19 @@ namespace Paint.UI.Menu.Strips
         ToolStripMenuItem toolBarStrip;
         ToolStripMenuItem skinStrip;
 
+        ICommand _command;
+
         public ViewStrip(ICommand command)
         {
+            _command = command;
+
             LanguageManager langMang = LanguageManager.GetInstance();
             Name = "View";
             Text = langMang.GetValue(Name);
 
             toolBoxStrip = new ToolStripMenuItem(langMang.GetValue("ToolBox"), null,null, "ToolBox");
             toolBarStrip = new ToolStripMenuItem(langMang.GetValue("ToolBar"), null,null, "ToolBar");
-            skinStrip = MenuBar.GetDropDownStrip("Skin", new List<string>() { "Light", "Dark", "Pink" }, command.ChangeSkin.Action);
-
+       
             toolBoxStrip.CheckState = CheckState.Checked;
             toolBarStrip.CheckState = CheckState.Checked;
 
@@ -28,6 +34,12 @@ namespace Paint.UI.Menu.Strips
             DropDownItems.Add(toolBarStrip);
             DropDownItems.Add(new ToolStripSeparator());
 
+           
+        }
+
+        internal void AddSkinsToMenu(List<ISkin> skins)
+        {
+            skinStrip = MenuBar.GetDropDownStrip("Skins", skins.Select(x => x.Name).ToList(), _command.ChangeSkin.Action);
             DropDownItems.Add(skinStrip);
         }
     }

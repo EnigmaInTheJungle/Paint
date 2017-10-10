@@ -13,10 +13,9 @@ namespace Paint.UI.Tab
 
         public IPluginContext PageContext{ get => _viewPanel.Context; set => _viewPanel.Context = value; }
 
-    public Page(string pageText)
+        public Page(string pageText)
         {
             Dock = DockStyle.Fill;
-
             Text = pageText + ((pageText == "Page") ? _count++.ToString() : "");
             Name = Text;
 
